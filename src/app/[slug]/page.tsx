@@ -2,13 +2,13 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./detail.scss";
-import SingleNewsBlock from "@/components/News";
+// import SingleNewsBlock from "@/components/News";
 import { getBlogDetil } from "@/services/getBlogDetail";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import { performRequest } from "@/services/baseQuery";
 import { BlogDetailContent, BlogDetailT } from "@/interface";
 import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
-import SingleImage from "@/components/SingleImage";
+// import SingleImage from "@/components/SingleImage";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 
 export default function DetailPage({ params }: { params: { slug: string } }) {

@@ -7,7 +7,7 @@ import { Blog } from "@/interface";
 
 export default function SingleNewsBlock({ data, key }: { data: Blog; key: string }) {
   return (
-    <div className="news__item">
+    <div className="news__item" key={key}>
       <div className="news__image relative aspect-square  sm:aspect-blog-image">
         <Link href={`${data.slug}`} className="block">
           <Image src={data.featuredImage?.url} alt={data.featuredImage?.alt} layout="fill" objectFit="cover" />
