@@ -25,10 +25,14 @@ const config: Config = {
         secondary: {
           DEFAULT: "#424851",
         },
+        ternary: {
+          DEFAULT: "#989da2",
+        },
       },
-    },
-    aspectRatio: {
-      "blog-image": "240 / 100",
+
+      aspectRatio: {
+        "blog-image": "240 / 100",
+      },
     },
   },
   plugins: [],

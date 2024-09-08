@@ -24,7 +24,9 @@ export default function Header() {
     <header className="header bg-white">
       <div className="container">
         <div className="header__content flex justify-between items-center">
-          <h2 className="text-primary">Arjun.</h2>
+          <h2 className="text-primary">
+            <Link href={"/"}>Arjun.</Link>
+          </h2>
           <ul className="header__menu flex justify-end items-center gap-8">
             {MenuItems.map((item, index) => {
               return (

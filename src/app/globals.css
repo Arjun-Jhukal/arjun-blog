@@ -16,8 +16,22 @@
     transition: all 0.3s ease-in-out;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply font-[900];
+  }
+
+  h1 {
+    @apply text-[28px] leading-[32px] md:text-[40px] md:leading-[48px] lg:text-[48px] lg:leading-[58px];
+  }
+
   h2 {
-    @apply text-[24px] leading-[28px] lg:text-[40px] lg:leading-[48px] font-[900] text-secondary hover:text-primary;
+    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px]   hover:text-primary;
+  }
+
+  h3 {
+    @apply text-[20px] leading-[30px];
   }
 
   p {
@@ -25,6 +39,12 @@
   }
 
   .category {
-    @apply bg-primary text-white hover:bg-secondary font-[700] py-2 px-4;
+    @apply bg-primary text-[14px] md:text-[16px]
+     text-white hover:bg-secondary font-[700] py-1 px-3 md:py-2 md:px-4;
+  }
+
+  .read__more {
+    @apply border-[1px] border-solid border-primary transition-all ease-in-out duration-500 py-2 px-3 inline-block
+    mt-4 hover:bg-primary hover:text-white;
   }
 }
