@@ -1,4 +1,4 @@
-import SingleNewsBlock from "./components/News";
+import SingleNewsBlock from "@/components/News";
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
-import Image from "next/image";
+import React from "react";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 import "./news.scss";
@@ -8,7 +9,7 @@ export default function SingleNewsBlock() {
     <div className="news__item">
       <div className="news__image relative aspect-square md:aspect-blog-image">
         <Link href={"/detail"} className="block">
-          <Image src={"/placeholder-01.jpg"} alt="" fill objectFit="cover" />
+          <Image src={"/placeholder-01.jpg"} alt="" layout="fill" objectFit="cover" />
         </Link>
       </div>
       <div className="news__content">

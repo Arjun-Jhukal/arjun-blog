@@ -7,8 +7,6 @@ import "./header.scss";
 export default function Header() {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   const MenuItems = [
     {
       label: "Home",

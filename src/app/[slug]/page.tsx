@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./detail.scss";
-import SingleNewsBlock from "../components/News";
+import SingleNewsBlock from "@/components/News";
 
 export default function DetailPage() {
   return (
