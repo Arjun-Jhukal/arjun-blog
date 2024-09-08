@@ -1,0 +1,23 @@
+.news__item {
+  .news__image {
+    @apply mb-6 md:mb-8;
+  }
+
+  .news__content {
+    @apply lg:max-w-[532px] mx-auto;
+
+    .category {
+      @apply mb-3 md:mb-2;
+    }
+    h2 {
+      @apply mb-4 md:mb-6;
+    }
+    .author {
+      @apply mb-6 md:mb-[24px];
+    }
+  }
+
+  &:not(:last-child) {
+    @apply mb-16 md:mb-[44px];
+  }
+}

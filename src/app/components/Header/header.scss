@@ -1,0 +1,15 @@
+.header {
+  padding: 32px 0;
+  .header__menu {
+    li {
+      &.active {
+        a {
+          @apply text-primary;
+        }
+      }
+      a {
+        @apply text-[14px] font-[700] leading-[22px];
+      }
+    }
+  }
+}
