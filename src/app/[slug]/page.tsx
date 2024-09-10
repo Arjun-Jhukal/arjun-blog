@@ -69,11 +69,6 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 
       const postDetail = result.post;
 
-      console.log({
-        slug: slug,
-        postDetail,
-      });
-
       return (
         <section className="news__detail my-[80px] md:my-[120px] ">
           <div className="container">
