@@ -1,6 +1,6 @@
-export const getBlogDetil = () => {
-  return `query getBlogDetail{
-     post(filter: {slug: {eq: "the-ultimate-frontend-developer-roadmap-for-2024"}}) {
+export const getBlogDetail = () => {
+  return `query getBlogDetail($slug: String){
+     post(filter: {slug: { eq: $slug}}) {
     brief
     category {
       id
@@ -18,6 +18,11 @@ export const getBlogDetil = () => {
           alt
           url
         }
+      }
+      ... on QuoteRecord {
+        __typename
+        quoteBy
+        quoteText
       }
     }
     featuredImage {

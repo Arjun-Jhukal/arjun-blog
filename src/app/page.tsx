@@ -12,6 +12,7 @@ export default function Home() {
     try {
       const data = (await performRequest({
         query: QUERY,
+        options: { slug: "/" },
       })) as {
         allPosts: Blog[];
       };

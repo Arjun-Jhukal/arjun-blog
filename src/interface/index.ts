@@ -38,7 +38,13 @@ export interface SingleImageBlockRecord {
   };
 }
 
-export type BlogDetailT = BlogContentRecord | SingleImageBlockRecord;
+export interface QuoteRecordType {
+  __typename: string;
+  quoteBy: string;
+  quoteText: string;
+}
+
+export type BlogDetailT = BlogContentRecord | SingleImageBlockRecord | QuoteRecordType;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 

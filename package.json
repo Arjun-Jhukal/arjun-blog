@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@datocms/cda-client": "^0.2.2",
+    "graphql-request": "^7.1.0",
     "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18",
