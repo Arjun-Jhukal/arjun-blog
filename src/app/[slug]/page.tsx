@@ -9,7 +9,7 @@ import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import LoadingNewsBlock from "@/components/NewsFallback";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   // Fetch the blog post detail
