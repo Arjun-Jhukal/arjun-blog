@@ -7,7 +7,6 @@ import { performRequest } from "@/services/baseQuery";
 import { BlogDetailContent, BlogDetailT } from "@/interface";
 import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
-import { notFound } from "next/navigation";
 import LoadingNewsBlock from "@/components/NewsFallback";
 
 export default function DetailPage({ params }: { params: { slug: string } }) {
