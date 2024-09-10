@@ -12,10 +12,11 @@ export default function Header() {
       label: "Home",
       url: "/",
     },
-    // {
-    //   label: "Blog",
-    //   url: "/blog",
-    // },
+    {
+      label: "Connect",
+      url: "https://arjunjhukal.com.np",
+      externalLink: true,
+    },
   ];
 
   return (
@@ -29,7 +30,16 @@ export default function Header() {
             {MenuItems.map((item, index) => {
               return (
                 <li key={item.label + index.toString()} className={item.url === pathname ? "active" : ""}>
-                  <Link href={item.url}>{item.label}</Link>
+                  <Link
+                    href={item.url}
+                    onClick={() => {
+                      if (item.externalLink) {
+                        localStorage.setItem("connect", "contact");
+                      }
+                    }}
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               );
             })}
