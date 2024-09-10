@@ -9,6 +9,50 @@ import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import LoadingNewsBlock from "@/components/NewsFallback";
 
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+
+  // Fetch the blog post detail
+  const QUERY = getBlogDetail();
+  const result = (await performRequest({
+    query: QUERY,
+    variables: {
+      slug: slug,
+    },
+  })) as { post: BlogDetailContent };
+  const postDetail = result.post;
+
+  // Extract relevant metadata fields
+  const metadata = {
+    title: postDetail?.seo?.title,
+    description: postDetail?.seo?.description,
+    openGraph: {
+      title: postDetail?.seo?.title,
+      description: postDetail?.seo?.description,
+
+      images: [
+        {
+          url: postDetail?.seo?.image?.url,
+          alt: postDetail?.seo?.image?.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: postDetail?.seo?.twitterCard,
+      title: postDetail?.seo?.title,
+      description: postDetail?.seo?.description,
+      images: [
+        {
+          url: postDetail?.seo?.image?.url,
+          alt: postDetail?.seo?.image?.alt,
+        },
+      ],
+    },
+  };
+
+  return metadata;
+}
+
 export default function DetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
