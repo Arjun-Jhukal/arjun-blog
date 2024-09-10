@@ -44,6 +44,13 @@ export interface QuoteRecordType {
   quoteText: string;
 }
 
+export interface SEOProps {
+  description: string;
+  image: Image;
+  title: string;
+  twitterCard: string;
+}
+
 export type BlogDetailT = BlogContentRecord | SingleImageBlockRecord | QuoteRecordType;
 
 export type BlogDetailContentRecord = BlogDetailT[];
@@ -51,4 +58,5 @@ export type BlogDetailContentRecord = BlogDetailT[];
 export interface BlogDetailContent extends Blog {
   content: BlogDetailContentRecord;
   publishedAt: string;
+  seo: SEOProps;
 }

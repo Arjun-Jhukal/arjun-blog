@@ -7,6 +7,15 @@ export const getBlogDetail = () => {
         name
         slug
       }
+        seo {
+      description
+      title
+      twitterCard
+      image {
+        alt
+        url
+      }
+    }
       content {
         ... on BlogContentRecord {
           __typename
