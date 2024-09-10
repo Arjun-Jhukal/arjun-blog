@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Head from "next/head";
 
 const muli = Mulish({
   subsets: ["cyrillic"],
@@ -23,6 +24,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF3FT0Y480"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PF3FT0Y480');
+          `}
+        </script>
+      </Head>
       <body className={`${muli.className} antialiased`}>
         <Header />
         <main className="main">{children}</main>
