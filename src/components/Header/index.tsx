@@ -12,10 +12,10 @@ export default function Header() {
       label: "Home",
       url: "/",
     },
-    {
-      label: "Blog",
-      url: "/blog",
-    },
+    // {
+    //   label: "Blog",
+    //   url: "/blog",
+    // },
   ];
 
   return (
