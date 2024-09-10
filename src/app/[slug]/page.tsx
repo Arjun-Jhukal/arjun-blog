@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import "./detail.scss";
 import { getBlogDetail } from "@/services/getBlogDetail";
@@ -7,6 +7,8 @@ import { performRequest } from "@/services/baseQuery";
 import { BlogDetailContent, BlogDetailT } from "@/interface";
 import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
+import { notFound } from "next/navigation";
+import LoadingNewsBlock from "@/components/NewsFallback";
 
 export default function DetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -17,7 +19,7 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
     try {
       const result = (await performRequest({
         query: QUERY,
-        options: {
+        variables: {
           slug: slug,
         },
       })) as { post: BlogDetailContent };
@@ -33,35 +35,40 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
         <section className="news__detail my-[80px] md:my-[120px] ">
           <div className="container">
             <div className="section-title lg:text-center max-w-[736px] mx-auto mb-4 md:mb-8">
-              {postDetail.category.length > 0
+              {postDetail?.category.length > 0
                 ? postDetail.category.map((cat) => (
                     <Link href={`/${cat.slug}`} className="category mb-2" key={cat.slug}>
                       {cat.name}
                     </Link>
                   ))
                 : ""}
-              <h1 className="mb-2 md:mb-3">{postDetail.title}</h1>
+              <h1 className="mb-2 md:mb-3">{postDetail?.title}</h1>
               <p className="text-ternary text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] "> - 2 Weeks ago</p>
             </div>
 
             <div className="featured__image relative aspect-blog-image mb-4 md:mb-8">
-              <Image src={postDetail.featuredImage.url} alt={postDetail.featuredImage.alt} fill objectFit="cover" priority />
+              <Image src={postDetail?.featuredImage.url} alt={postDetail?.featuredImage.alt} layout="fill" objectFit="cover" priority />
             </div>
 
             <div className="detail__content__box max-w-[540px] mx-auto">
               <div className="author-block flex justify-start items-center mb-3 gap-4">
-                {postDetail.writtenBy.authorProfile ? (
+                {postDetail?.writtenBy.authorProfile ? (
                   <div className="author-profile relative w-[50px] h-[50px] rounded-[50%] overflow-hidden ">
-                    <Image src={postDetail.writtenBy?.authorProfile?.url} alt={postDetail.writtenBy?.authorProfile?.alt} fill objectFit="cover" />
+                    <Image
+                      src={postDetail?.writtenBy?.authorProfile?.url}
+                      alt={postDetail?.writtenBy?.authorProfile?.alt}
+                      layout="fill"
+                      objectFit="cover"
+                    />
                   </div>
                 ) : (
                   ""
                 )}
                 <div className="author-info">
                   <span className="text-[12px] leading-[16px] block text-ternary">Written by</span>
-                  {postDetail.writtenBy.name ? (
+                  {postDetail?.writtenBy.name ? (
                     <Link href={"#"} className="text-primary font-[900]">
-                      {postDetail.writtenBy.name}
+                      {postDetail?.writtenBy.name}
                     </Link>
                   ) : (
                     ""
@@ -90,6 +97,14 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
         <div className="container">
           <div className="section-title mb-4 md:mb-8">
             <h2>Related Articles</h2>
+          </div>
+          <div className="md:grid grid-cols-2 gap-[32px]">
+            <div className="col-span-1">
+              <LoadingNewsBlock />
+            </div>
+            <div className="col-span-1">
+              <LoadingNewsBlock />
+            </div>
           </div>
         </div>
       </section>

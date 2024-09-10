@@ -1,16 +1,17 @@
-import { executeQuery } from "@datocms/cda-client";
+import { GraphQLClient } from "graphql-request";
 
 interface GraphQLRequest {
   query: string;
-  options: Record<string, any>;
+  variables?: Record<string, any>;
 }
 
-export const performRequest = ({ query, options = {} }: GraphQLRequest) => {
-  const response = executeQuery(query, {
-    ...options,
-    token: process.env.NEXT_DATOCMS_API_TOKEN as string,
-    environment: process.env.NEXT_DATOCMS_ENVIRONMENT || "main",
-  });
+export function performRequest({ query, variables }: GraphQLRequest) {
+  const endpoint = process.env.NEXT_PUBLIC_BASE_BACKEND ?? "";
 
-  return response;
-};
+  const client = new GraphQLClient(endpoint, {
+    headers: {
+      authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+  });
+  return client.request(query, variables);
+}
