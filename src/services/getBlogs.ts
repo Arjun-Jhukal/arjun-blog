@@ -1,7 +1,7 @@
-export const getAllBlogs = () => {
+export const getAllBlogs = (total: number) => {
   return `
-      query getAllBlogs {
-        allPosts {
+      query getAllBlogs{
+        allPosts(first:${total}) {
           __typename
           title
           slug
