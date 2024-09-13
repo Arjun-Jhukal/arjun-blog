@@ -5,6 +5,8 @@ import { getAllBlogs } from "@/services/getBlogs";
 import { Blog } from "@/interface";
 import LoadingNewsBlock from "@/components/NewsFallback";
 
+export const revalidate = 3600;
+
 export default function Home() {
   const QUERY: string = getAllBlogs();
 
