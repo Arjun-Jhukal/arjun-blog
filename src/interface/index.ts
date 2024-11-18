@@ -1,62 +1,66 @@
 export interface Image {
-  url: string;
-  alt: string;
+	url: string;
+	alt: string;
 }
 
 export interface Author {
-  name: string;
-  authorDesignation?: string;
-  authorProfile?: Image;
-  authorMessage?: string;
+	name: string;
+	authorDesignation?: string;
+	authorProfile?: Image;
+	authorMessage?: string;
 }
 
 export interface Category {
-  name: string;
-  slug: string;
+	id: string;
+	name: string;
+	slug: string;
 }
 
 export interface Blog {
-  __typename: string;
-  title: string;
-  slug: string;
-  featuredImage: Image;
-  writtenBy: Author;
-  category: Category[];
-  brief: string;
+	__typename: string;
+	title: string;
+	slug: string;
+	featuredImage: Image;
+	writtenBy: Author;
+	category: Category[];
+	brief: string;
 }
 
 export interface BlogContentRecord {
-  __typename: string;
-  blogContent: string;
+	__typename: string;
+	blogContent: string;
 }
 
 export interface SingleImageBlockRecord {
-  __typename: string;
-  image: {
-    alt: string;
-    url: string;
-  };
+	__typename: string;
+	image: {
+		alt: string;
+		url: string;
+	};
 }
 
 export interface QuoteRecordType {
-  __typename: string;
-  quoteBy: string;
-  quoteText: string;
+	__typename: string;
+	quoteBy: string;
+	quoteText: string;
 }
 
 export interface SEOProps {
-  description: string;
-  image: Image;
-  title: string;
-  twitterCard: string;
+	description: string;
+	image: Image;
+	title: string;
+	twitterCard: string;
 }
 
-export type BlogDetailT = BlogContentRecord | SingleImageBlockRecord | QuoteRecordType;
+export type BlogDetailT =
+	| BlogContentRecord
+	| SingleImageBlockRecord
+	| QuoteRecordType;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 
 export interface BlogDetailContent extends Blog {
-  content: BlogDetailContentRecord;
-  publishedAt: string;
-  seo: SEOProps;
+	content: BlogDetailContentRecord;
+	publishedAt: string;
+	seo: SEOProps;
 }

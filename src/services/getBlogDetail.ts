@@ -1,5 +1,5 @@
 export const getBlogDetail = () => {
-  return `query getBlogDetail($slug:String) {
+	return `query getBlogDetail($slug:String) {
     post(filter: {slug: { eq: $slug }}) {
       brief
       category {

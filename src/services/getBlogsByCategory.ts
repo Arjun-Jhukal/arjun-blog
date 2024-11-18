@@ -1,8 +1,8 @@
-export const getAllBlogs = (total: number) => {
+export const getAllBlogsByCategory = (categoryId: string) => {
 	return `
-      query getAllBlogs{
-        allPosts(first:${total}) {
-          __typename
+    query getAllBlogsByCategory {
+      allPosts(filter: { category: { eq: "${categoryId}" } }) {
+        __typename
           title
           slug
           featuredImage {
@@ -18,7 +18,7 @@ export const getAllBlogs = (total: number) => {
             slug
           }
           brief
-        }
       }
-    `;
+    }
+  `;
 };

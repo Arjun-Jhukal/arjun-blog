@@ -1,14 +1,17 @@
-import { Suspense } from "react";
+import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
+import { Blog } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
 import { getAllBlogs } from "@/services/getBlogs";
-import { Blog } from "@/interface";
-import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
+import { getAllBlogsByCategory } from "@/services/getBlogsByCategory";
+import React, { Suspense } from "react";
 
-export const revalidate = 60;
-
-export default function Home() {
-	const QUERY: string = getAllBlogs(10);
+export default function CategoryPage({
+	params,
+}: {
+	params: { category: string };
+}) {
+	const QUERY: string = getAllBlogsByCategory(params.category);
 
 	const BlogList = async () => {
 		try {
@@ -23,10 +26,12 @@ export default function Home() {
 
 			return (
 				<>
-					<div className="lg:grid grid-cols-2 gap-x-8 gap-y-16">
+					<div className="md:grid grid-cols-2 gap-x-8 gap-y-16">
 						{blogs.length > 0 &&
 							blogs.map((blog: any, index: number) => (
-								<SingleNewsBlock key={index.toString()} data={blog} />
+								<div className="col-span-1" key={index.toString()}>
+									<SingleNewsBlock data={blog} />
+								</div>
 							))}
 					</div>
 				</>
@@ -36,7 +41,6 @@ export default function Home() {
 			return <p>Error loading blogs.</p>;
 		}
 	};
-
 	return (
 		<section className="blog__list my-[80px] md:my-[120px]">
 			<div className="container">
