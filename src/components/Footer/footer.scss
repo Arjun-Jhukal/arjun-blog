@@ -1,0 +1,33 @@
+.footer {
+	@apply bg-black pt-8 lg:pt-16;
+
+	h3,
+	li a,
+	p,
+	a {
+		@apply text-white;
+	}
+
+	h3 {
+		@apply mb-6;
+	}
+
+	a {
+		@apply hover:text-primary;
+	}
+	ul {
+		li {
+			&:not(:last-child) {
+				@apply mb-4;
+			}
+		}
+	}
+
+	input {
+		@apply border-secondary border-[1px] border-solid rounded-sm px-4 py-2 mb-2;
+	}
+	button {
+		transition: all 0.3s ease-in-out;
+		@apply mb-2;
+	}
+}
