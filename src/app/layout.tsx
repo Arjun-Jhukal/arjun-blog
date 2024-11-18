@@ -39,6 +39,10 @@ export default function RootLayout({
             gtag('config', 'G-PF3FT0Y480');
           `}
 				</script>
+
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8678344611307925"></script>
 			</Head>
 			<body className={`${muli.className} antialiased`}>
 				<Header />
