@@ -6,45 +6,59 @@ import "./news.scss";
 import { Blog } from "@/interface";
 
 export default function SingleNewsBlock({ data }: { data: Blog }) {
-  return (
-    <div className="news__item">
-      {data?.featuredImage?.url ? (
-        <div className="news__image relative aspect-square  sm:aspect-blog-image">
-          <Link href={`${data.slug}`} className="block">
-            <Image src={data.featuredImage?.url} alt={data.featuredImage?.alt} layout="fill" objectFit="cover" />
-          </Link>
-        </div>
-      ) : (
-        ""
-      )}
-      <div className="news__content">
-        {data.category.length > 0 ? (
-          <Link href={`${data.category[0].slug}`} className="category">
-            {data.category[0].name}
-          </Link>
-        ) : (
-          ""
-        )}
+	return (
+		<div className="news__item">
+			{data?.featuredImage?.url ? (
+				<div className="news__image relative aspect-square  sm:aspect-blog-image">
+					<Link
+						href={`${data.category[0].slug}/${data.slug}`}
+						className="block">
+						<Image
+							src={data.featuredImage?.url}
+							alt={data.featuredImage?.alt}
+							layout="fill"
+							objectFit="cover"
+						/>
+					</Link>
+				</div>
+			) : (
+				""
+			)}
+			<div className="news__content">
+				{data.category.length > 0 ? (
+					<Link href={`${data.category[0].id}`} className="category">
+						{data.category[0].name}
+					</Link>
+				) : (
+					""
+				)}
 
-        {data?.title ? (
-          <h2>
-            <Link href={`${data.slug}`}>{data.title}</Link>
-          </h2>
-        ) : (
-          ""
-        )}
-        {data?.writtenBy?.name ? (
-          <p className="author">
-            by <span className="text-primary font-[700]">{data.writtenBy.name}</span>
-          </p>
-        ) : (
-          ""
-        )}
-        {data?.brief ? <p>{data.brief}</p> : ""}
-        <Link href={`${data.slug}`} className="read__more">
-          + Read More
-        </Link>
-      </div>
-    </div>
-  );
+				{data?.title ? (
+					<h2>
+						<Link href={`${data.category[0].slug}/${data.slug}`}>
+							{data.title}
+						</Link>
+					</h2>
+				) : (
+					""
+				)}
+				{data?.writtenBy?.name ? (
+					<p className="author">
+						by{" "}
+						<span className="text-primary font-[700]">
+							{data.writtenBy.name}
+						</span>
+					</p>
+				) : (
+					""
+				)}
+				{data?.brief ? <p>{data.brief}</p> : ""}
+				<Link
+					href={`${data.category[0].slug}/${data.slug}`}
+					className="read__more">
+					+ Read More
+				</Link>
+			</div>
+		</div>
+	);
 }
