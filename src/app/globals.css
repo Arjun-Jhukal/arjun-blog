@@ -3,48 +3,53 @@
 @tailwind utilities;
 
 @layer utilities {
-  body {
-    @apply text-secondary text-[16px] leading-[26px] font-[400];
-    background-color: #f7f7f7;
-  }
+	body {
+		@apply text-secondary text-[16px] leading-[26px] font-[400];
+		background-color: #f7f7f7;
+	}
 
-  a {
-    @apply inline-block;
-  }
-  a,
-  h2 {
-    transition: all 0.3s ease-in-out;
-  }
+	a {
+		@apply inline-block;
+	}
+	a,
+	h2 {
+		transition: all 0.3s ease-in-out;
+	}
 
-  h1,
-  h2,
-  h3 {
-    @apply font-[900];
-  }
+	h1,
+	h2,
+	h3 {
+		@apply font-[900];
+	}
 
-  h1 {
-    @apply text-[28px] leading-[32px] md:text-[40px] md:leading-[48px] lg:text-[48px] lg:leading-[58px];
-  }
+	h1 {
+		@apply text-[28px] leading-[32px] md:text-[40px] md:leading-[48px] lg:text-[48px] lg:leading-[58px];
+	}
 
-  h2 {
-    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px]   hover:text-primary;
-  }
+	h2 {
+		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px]   hover:text-primary;
+	}
 
-  h3 {
-    @apply text-[20px] leading-[30px];
-  }
+	h3 {
+		@apply text-[20px] leading-[30px];
+	}
 
-  p {
-    @apply text-secondary text-[16px] leading-[26px] font-[400];
-  }
+	p {
+		@apply text-secondary text-[16px] leading-[26px] font-[400];
+	}
 
-  .category {
-    @apply bg-primary text-[14px] md:text-[16px]
+	input,
+	button {
+		@apply border-[none] outline-none bg-transparent w-full;
+	}
+
+	.category {
+		@apply bg-primary text-[14px] md:text-[16px]
      text-white hover:bg-secondary font-[700] py-1 px-3 md:py-2 md:px-4;
-  }
+	}
 
-  .read__more {
-    @apply border-[1px] border-solid border-primary transition-all ease-in-out duration-500 py-2 px-3 inline-block
+	.read__more {
+		@apply border-[1px] border-solid border-primary transition-all ease-in-out duration-500 py-2 px-3 inline-block
     mt-4 hover:bg-primary hover:text-white;
-  }
+	}
 }

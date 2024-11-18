@@ -2,7 +2,6 @@ import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
 import { Blog } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
-import { getAllBlogs } from "@/services/getBlogs";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory";
 import React, { Suspense } from "react";
 
