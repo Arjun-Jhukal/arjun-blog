@@ -30,4 +30,12 @@
 		transition: all 0.3s ease-in-out;
 		@apply mb-2;
 	}
+
+	.footer-content {
+		> div {
+			&:not(:last-child) {
+				@apply mb-8 md:mb-0;
+			}
+		}
+	}
 }

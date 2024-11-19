@@ -28,7 +28,11 @@ export default function CategoryPage({
 					<div className="md:grid grid-cols-2 gap-x-8 gap-y-16">
 						{blogs.length > 0 &&
 							blogs.map((blog: any, index: number) => (
-								<div className="col-span-1" key={index.toString()}>
+								<div
+									className={`col-span-1 ${
+										index < blogs.length - 1 ? "mb-6" : ""
+									}`}
+									key={index.toString()}>
 									<SingleNewsBlock data={blog} />
 								</div>
 							))}
