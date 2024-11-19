@@ -80,7 +80,7 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 							{postDetail?.category.length > 0
 								? postDetail.category.map((cat) => (
 										<Link
-											href={`/${cat.slug}`}
+											href={`/${cat.id}`}
 											className="category mb-2"
 											key={cat.slug}>
 											{cat.name}

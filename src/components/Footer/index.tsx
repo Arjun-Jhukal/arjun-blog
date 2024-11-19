@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className="footer">
 			<div className="container">
-				<div className="md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+				<div className="md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 footer-content">
 					<div className="col-span-1">
 						<div className="footer-link">
 							<h3>Quick Links</h3>
@@ -60,8 +60,8 @@ export default function Footer() {
 								</button>
 							</form>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-								modi.
+								Subscribe to our newsletter for the latest updates, exclusive
+								deals, and more!
 							</p>
 						</div>
 					</div>
