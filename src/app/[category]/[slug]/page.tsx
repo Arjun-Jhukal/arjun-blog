@@ -9,6 +9,7 @@ import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 
+export const revalidate = 60;
 export async function generateMetadata({
 	params,
 }: {

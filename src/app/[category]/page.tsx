@@ -5,6 +5,8 @@ import { performRequest } from "@/services/baseQuery";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory";
 import React, { Suspense } from "react";
 
+export const revalidate = 60;
+
 export default function CategoryPage({
 	params,
 }: {
