@@ -1,6 +1,7 @@
 .detail-content {
-  > p,
-  > img,
+
+  >p,
+  >img,
   ul,
   ol {
     @apply mb-4 md:mb-8;
@@ -10,17 +11,16 @@
     @apply text-primary underline;
   }
 
-  > h2,
-  > h3,
-  > h4 {
-    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px]
-       lg:leading-[48px] font-[900]
-        text-secondary mb-4 mt-6;
+  >h2,
+  >h3,
+  >h4 {
+    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px] font-[900] text-secondary mb-4 mt-6;
   }
 
   ul,
   ol {
     padding-left: 24px;
+
     li {
       &:not(:last-child) {
         margin-bottom: 8px;
@@ -37,9 +37,26 @@
       list-style-type: disc;
     }
   }
+
   ol {
     li {
       list-style-type: decimal-leading-zero;
+    }
+  }
+
+  p {
+    img {
+      max-width: calc(50% - 16px);
+      margin-right: 16px;
+      float: left;
+      aspect-ratio: 200 / 200;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
     }
   }
 }

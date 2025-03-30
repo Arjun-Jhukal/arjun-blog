@@ -1,5 +1,5 @@
 export const getAllBlogs = (total: number) => {
-	return `
+  return `
       query getAllBlogs{
         allPosts(first:${total}) {
           __typename
@@ -18,6 +18,7 @@ export const getAllBlogs = (total: number) => {
             slug
           }
           brief
+          publishedAt
         }
       }
     `;

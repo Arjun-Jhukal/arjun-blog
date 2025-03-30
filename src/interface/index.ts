@@ -24,6 +24,7 @@ export interface Blog {
 	writtenBy: Author;
 	category: Category[];
 	brief: string;
+	publishedAt?: string;
 }
 
 export interface BlogContentRecord {
