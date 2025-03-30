@@ -47,6 +47,14 @@ export default function SingleNewsBlock({ data }: { data: Blog }) {
 						by{" "}
 						<span className="text-primary font-[700]">
 							{data.writtenBy.name}
+						</span> | <span>
+							{data?.publishedAt
+								? new Date(data.publishedAt).toLocaleDateString("en-US", {
+									month: "short",
+									day: "2-digit",
+									year: "numeric",
+								})
+								: ""}
 						</span>
 					</p>
 				) : (

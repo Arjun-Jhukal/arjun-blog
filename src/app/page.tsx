@@ -4,11 +4,12 @@ import { performRequest } from "@/services/baseQuery";
 import { getAllBlogs } from "@/services/getBlogs";
 import { Blog } from "@/interface";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
+import FeaturedNews from "@/components/News/FeaturedNews";
 
 export const revalidate = 30;
 
 export default function Home() {
-	const QUERY: string = getAllBlogs(10);
+	const QUERY: string = getAllBlogs(20);
 
 	const BlogList = async () => {
 		try {
@@ -26,7 +27,8 @@ export default function Home() {
 					<div className="lg:grid grid-cols-2 gap-x-8 gap-y-16">
 						{blogs.length > 0 &&
 							blogs.map((blog: any, index: number) => (
-								<SingleNewsBlock key={index.toString()} data={blog} />
+								index === 0 ? <FeaturedNews key={index.toString()} data={blog} /> :
+									<SingleNewsBlock key={index.toString()} data={blog} />
 							))}
 					</div>
 				</>
