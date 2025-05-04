@@ -80,18 +80,21 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 						<div className="section-title lg:text-center max-w-[736px] mx-auto mb-4 md:mb-8">
 							{postDetail?.category.length > 0
 								? postDetail.category.map((cat) => (
-										<Link
-											href={`/${cat.id}`}
-											className="category mb-2"
-											key={cat.slug}>
-											{cat.name}
-										</Link>
-								  ))
+									<Link
+										href={`/${cat.id}`}
+										className="category mb-2"
+										key={cat.slug}>
+										{cat.name}
+									</Link>
+								))
 								: ""}
 							<h1 className="mb-2 md:mb-3">{postDetail?.title}</h1>
-							<p className="text-ternary text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] ">
-								{" "}
-								- 2 Weeks ago
+							<p className=" text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] text-primary">
+								{new Date(postDetail?.publishedAt).toLocaleDateString('en-US', {
+									month: 'short',
+									day: 'numeric',
+									year: 'numeric',
+								})}
 							</p>
 						</div>
 
@@ -162,6 +165,7 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 						<h2>Related Articles</h2>
 					</div>
 					<div className="md:grid grid-cols-2 gap-[32px]">
+
 						<div className="col-span-1">
 							<LoadingNewsBlock />
 						</div>
