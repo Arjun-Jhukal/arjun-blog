@@ -9,7 +9,7 @@ import FeaturedNews from "@/components/News/FeaturedNews";
 export const revalidate = 30;
 
 export default function Home() {
-	const QUERY: string = getAllBlogs(20);
+	const QUERY: string = getAllBlogs(25);
 
 	const BlogList = async () => {
 		try {

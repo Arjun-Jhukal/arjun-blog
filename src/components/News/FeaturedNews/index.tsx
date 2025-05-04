@@ -22,7 +22,7 @@ export default function FeaturedNews({ data }: { data: Blog }) {
             ) : (
                 ""
             )}
-            <div className="news__content absolute left-16 bottom-16 max-w-[auto]">
+            <div className="news__content">
                 {data.category.length > 0 ? (
                     <Link href={`${data.category[0].id}`} className="category">
                         {data.category[0].name}
@@ -32,16 +32,38 @@ export default function FeaturedNews({ data }: { data: Blog }) {
                 )}
 
                 {data?.title ? (
-                    <h1>
+                    <h2>
                         <Link href={`${data.category[0].slug}/${data.slug}`}>
                             {data.title}
                         </Link>
-                    </h1>
+                    </h2>
                 ) : (
                     ""
                 )}
-
+                {data?.writtenBy?.name ? (
+                    <p className="author">
+                        by{" "}
+                        <span className="text-primary font-[700]">
+                            {data.writtenBy.name}
+                        </span> | <span>
+                            {data?.publishedAt
+                                ? new Date(data.publishedAt).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "2-digit",
+                                    year: "numeric",
+                                })
+                                : ""}
+                        </span>
+                    </p>
+                ) : (
+                    ""
+                )}
                 {data?.brief ? <p>{data.brief}</p> : ""}
+                <Link
+                    href={`${data.category[0].slug}/${data.slug}`}
+                    className="read__more">
+                    + Read More
+                </Link>
             </div>
         </div>
     )

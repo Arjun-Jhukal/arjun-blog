@@ -26,30 +26,10 @@
   &.featured__news {
     margin-bottom: 0 !important;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, #1d1d1d 10%, transparent);
-    }
 
-    .news__image {
-      margin-bottom: 0;
-      z-index: -1;
-    }
 
     .news__content {
       @apply max-w-[90%] lg:max-w-[75%];
-
-      * {
-        @apply text-white;
-      }
-
-      a {
-        &:hover {
-          @apply text-primary;
-        }
-      }
     }
   }
 }

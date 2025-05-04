@@ -1,5 +1,5 @@
 export const getBlogDetail = () => {
-	return `query getBlogDetail($slug:String) {
+  return `query getBlogDetail($slug:String) {
     post(filter: {slug: { eq: $slug }}) {
       brief
       category {
@@ -7,6 +7,7 @@ export const getBlogDetail = () => {
         name
         slug
       }
+      publishedAt
         seo {
       description
       title
@@ -58,6 +59,19 @@ export const getBlogDetail = () => {
           alt
         }
       }
+    relatedPost {
+      featuredImage {
+        url
+        alt
+      }
+      title
+      slug
+      category {
+        name
+        slug
+      }
+      brief
+    }
     }
   }`;
 };
