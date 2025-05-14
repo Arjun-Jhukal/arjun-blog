@@ -11,5 +11,7 @@ export const RenderComponent = (section: BlogDetailT) => {
       return <SingleImage data={section as SingleImageBlockRecord} />;
     case "QuoteRecord":
       return <Quote data={section as QuoteRecordType} />;
+    case "QuoteRecord":
+      return <Quote data={section as QuoteRecordType} />;
   }
 };
