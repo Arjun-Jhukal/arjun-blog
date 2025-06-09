@@ -11,6 +11,7 @@
 	a {
 		@apply inline-block;
 	}
+
 	a,
 	h2 {
 		transition: all 0.3s ease-in-out;
@@ -27,7 +28,7 @@
 	}
 
 	h2 {
-		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px]   hover:text-primary;
+		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:leading-[48px] hover:text-primary;
 	}
 
 	h3 {
@@ -44,12 +45,18 @@
 	}
 
 	.category {
-		@apply bg-primary text-[14px] md:text-[16px]
-     text-white hover:bg-secondary font-[700] py-1 px-3 md:py-2 md:px-4;
+		@apply bg-primary text-[14px] md:text-[16px] text-white hover:bg-secondary font-[700] py-1 px-3 md:py-2 md:px-4;
 	}
 
 	.read__more {
-		@apply border-[1px] border-solid border-primary transition-all ease-in-out duration-500 py-2 px-3 inline-block
-    mt-4 hover:bg-primary hover:text-white;
+		@apply border-[1px] border-solid border-primary transition-all ease-in-out duration-500 py-2 px-3 inline-block mt-4 hover:bg-primary hover:text-white;
 	}
+}
+
+/* Move arrows lower (e.g., 80% from top) */
+.lg-next,
+.lg-prev {
+	top: calc(100% - 60px) !important;
+	/* Adjust as needed */
+	/* transform: translateY(-50%); */
 }

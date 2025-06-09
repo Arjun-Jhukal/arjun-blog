@@ -29,11 +29,23 @@ export const getBlogDetail = () => {
             url
           }
         }
+        ... on YoutubeIframeRecord {
+            __typename
+         
+          iframe
+        }
         ... on QuoteRecord {
           __typename
           quoteBy
           quoteText
         }
+        ... on MomentGalleryRecord {
+          __typename
+          galleryImage {
+            alt
+            url
+          }
+      }
       }
       featuredImage {
         url
