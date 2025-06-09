@@ -58,7 +58,14 @@ export async function generateMetadata({
 	return metadata;
 }
 
-export default function DetailPage({ params }: { params: { slug: string } }) {
+type PageProps = {
+	params: {
+		category: string;
+		slug: string;
+	};
+};
+
+export default function DetailPage({ params }: PageProps) {
 	const { slug } = params;
 
 	const QUERY: string = getBlogDetail();
