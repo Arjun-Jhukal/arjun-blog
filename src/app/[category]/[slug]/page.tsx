@@ -59,10 +59,7 @@ export async function generateMetadata({
 }
 
 type PageProps = {
-	params: {
-		category: string;
-		slug: string;
-	};
+	params: any;
 };
 
 export default function DetailPage({ params }: PageProps) {
