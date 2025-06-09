@@ -10,12 +10,8 @@ import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 
 export const revalidate = 60;
-export async function generateMetadata({
-	params,
-}: {
-	params: { category: string; slug: string };
-}) {
-	const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
 
 	// Fetch the blog post detail
 	const QUERY = getBlogDetail();
@@ -34,6 +30,7 @@ export async function generateMetadata({
 		openGraph: {
 			title: postDetail?.seo?.title,
 			description: postDetail?.seo?.description,
+
 			images: [
 				{
 					url: postDetail?.seo?.image?.url,
@@ -57,16 +54,12 @@ export async function generateMetadata({
 	return metadata;
 }
 
-interface PageProps {
-	params: {
-		category: string;
-		slug: string;
-	};
-}
+type PageProps = {
+	params: any;
+};
 
-export default function DetailPage({ params }: PageProps) {
-	const { slug } = params;
-
+export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
 	const QUERY: string = getBlogDetail();
 
 	const BlogDetail = async () => {
@@ -78,7 +71,10 @@ export default function DetailPage({ params }: PageProps) {
 				},
 			})) as { post: BlogDetailContent };
 
+
+
 			const postDetail = result.post;
+
 
 			return (
 				<section className="news__detail my-[80px] md:my-[120px] ">
@@ -157,7 +153,6 @@ export default function DetailPage({ params }: PageProps) {
 			);
 		} catch (e) {
 			console.log("Error Server Didn't respond", e);
-			return <div>Error loading content</div>;
 		}
 	};
 
@@ -172,6 +167,7 @@ export default function DetailPage({ params }: PageProps) {
 						<h2>Related Articles</h2>
 					</div>
 					<div className="md:grid grid-cols-2 gap-[32px]">
+
 						<div className="col-span-1">
 							<LoadingNewsBlock />
 						</div>
