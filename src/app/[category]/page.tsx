@@ -7,12 +7,9 @@ import React, { Suspense } from "react";
 
 export const revalidate = 60;
 
-export default function CategoryPage({
-	params,
-}: {
-	params: { category: string };
-}) {
-	const QUERY: string = getAllBlogsByCategory(params.category);
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+	const { category } = await params;
+	const QUERY: string = getAllBlogsByCategory(category);
 
 	const BlogList = async () => {
 		try {
@@ -31,9 +28,8 @@ export default function CategoryPage({
 						{blogs.length > 0 &&
 							blogs.map((blog: any, index: number) => (
 								<div
-									className={`col-span-1 ${
-										index < blogs.length - 1 ? "mb-6" : ""
-									}`}
+									className={`col-span-1 ${index < blogs.length - 1 ? "mb-6" : ""
+										}`}
 									key={index.toString()}>
 									<SingleNewsBlock data={blog} />
 								</div>
