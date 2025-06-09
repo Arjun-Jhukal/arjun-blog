@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function FeaturedNews({ data }: { data: Blog }) {
     return (
-        <div className="news__item featured__news col-span-2 relative ">
+        <div className="news__item featured__news col-span-2 relative mb-16 lg:mb-0">
             {data?.featuredImage?.url ? (
                 <div className="news__image relative aspect-square  sm:aspect-blog-image">
                     <Link
