@@ -75,6 +75,10 @@
   }
 }
 
+iframe {
+  width: 100%;
+}
+
 .related__news {
   .news__item {
     @apply md:mb-0;

@@ -45,6 +45,17 @@ export interface QuoteRecordType {
 	quoteBy: string;
 	quoteText: string;
 }
+export interface IframeRecordType {
+	__typename: string;
+	iframe: string;
+}
+export interface GalleryProps {
+	__typename: string;
+	galleryImage: {
+		alt: string;
+		url: string;
+	}[]
+}
 
 export interface SEOProps {
 	description: string;
@@ -56,7 +67,8 @@ export interface SEOProps {
 export type BlogDetailT =
 	| BlogContentRecord
 	| SingleImageBlockRecord
-	| QuoteRecordType;
+	| IframeRecordType
+	| QuoteRecordType | GalleryProps;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 

@@ -72,12 +72,15 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 				},
 			})) as { post: BlogDetailContent };
 
+
+
 			const postDetail = result.post;
+
 
 			return (
 				<section className="news__detail my-[80px] md:my-[120px] ">
 					<div className="container">
-						<div className="section-title lg:text-center max-w-[736px] mx-auto mb-4 md:mb-8">
+						<div className="section-title lg:text-center max-w-[90%] mx-auto mb-4 md:mb-8">
 							{postDetail?.category.length > 0
 								? postDetail.category.map((cat) => (
 									<Link
@@ -108,7 +111,7 @@ export default function DetailPage({ params }: { params: { slug: string } }) {
 							/>
 						</div>
 
-						<div className="detail__content__box max-w-[540px] lg:max-w-[736px] mx-auto">
+						<div className="detail__content__box max-w-[90%] xl:max-w-[80%] mx-auto">
 							<div className="author-block flex justify-start items-center mb-3 gap-4">
 								{postDetail?.writtenBy.authorProfile ? (
 									<div className="author-profile relative w-[50px] h-[50px] rounded-[50%] overflow-hidden ">
