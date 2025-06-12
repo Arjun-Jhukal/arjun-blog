@@ -31,9 +31,12 @@
 		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:leading-[48px] hover:text-primary;
 	}
 
-	h3 {
+	h3,
+	h4 {
 		@apply text-[20px] leading-[30px];
 	}
+
+
 
 	p {
 		@apply text-secondary text-[16px] leading-[26px] font-[400];

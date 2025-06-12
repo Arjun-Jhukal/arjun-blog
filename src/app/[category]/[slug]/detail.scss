@@ -12,9 +12,12 @@
   }
 
   >h2,
-  >h3,
-  >h4 {
+  >h3 {
     @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px] font-[900] text-secondary mb-4 mt-6;
+  }
+
+  h4 {
+    @apply font-[900] mt-3 mb-4;
   }
 
   ul,
