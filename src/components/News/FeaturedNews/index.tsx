@@ -16,6 +16,7 @@ export default function FeaturedNews({ data }: { data: Blog }) {
                             alt={data.featuredImage?.alt}
                             layout="fill"
                             objectFit="cover"
+                            priority
                         />
                     </Link>
                 </div>
