@@ -70,7 +70,7 @@ export default function Footer() {
 					<p>
 						&copy; {new Date().getFullYear()} Arjun Jhukal. All Right Reserved
 					</p>
-					<Link href={"/"}>Privacy Policy</Link>
+					<Link href={"/privacy"}>Privacy Policy</Link>
 				</div>
 			</div>
 		</footer>
