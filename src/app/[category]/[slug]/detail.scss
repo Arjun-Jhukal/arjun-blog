@@ -11,9 +11,8 @@
     @apply text-primary underline;
   }
 
-  >h2,
-  >h3 {
-    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[40px] lg:leading-[48px] font-[900] text-secondary mb-4 mt-6;
+  >h2 {
+    @apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] font-[900] text-secondary mb-4 mt-6;
   }
 
   h4 {

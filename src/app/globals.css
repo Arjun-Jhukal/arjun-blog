@@ -28,7 +28,7 @@
 	}
 
 	h2 {
-		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] lg:leading-[48px] hover:text-primary;
+		@apply text-[24px] leading-[28px] md:text-[32px] md:leading-[38px] hover:text-primary;
 	}
 
 	h3,
