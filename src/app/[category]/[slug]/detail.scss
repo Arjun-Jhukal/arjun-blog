@@ -20,6 +20,29 @@
     @apply font-[900] mt-3 mb-4;
   }
 
+  table {
+    width: 100%;
+
+    td,
+    th {
+      @apply px-3 py-2 text-left;
+    }
+
+    thead {
+      th {
+        @apply bg-primary text-white;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          @apply bg-orange-100;
+        }
+      }
+    }
+  }
+
   ul,
   ol {
     padding-left: 24px;
