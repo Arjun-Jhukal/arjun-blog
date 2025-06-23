@@ -58,13 +58,13 @@
   }
 
   ul {
-    li {
+    >li {
       list-style-type: disc;
     }
   }
 
   ol {
-    li {
+    >li {
       list-style-type: decimal-leading-zero;
     }
   }
