@@ -1,10 +1,23 @@
 .detail-content {
 
+
+
+
   >p,
   >img,
-  ul,
-  ol {
-    @apply mb-4 md:mb-8;
+  >ul,
+  >ol,
+  >table,
+  >strong {
+
+    +p,
+    +img,
+    +ul,
+    +ol,
+    +table,
+    +strong {
+      @apply mt-4;
+    }
   }
 
   a {
@@ -21,24 +34,38 @@
 
   table {
     width: 100%;
-
-    td,
-    th {
-      @apply px-3 py-2 text-left;
-    }
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 0.5rem; // rounded corners
 
     thead {
       th {
-        @apply bg-primary text-white;
+        @apply px-4 py-3 text-left bg-primary text-white text-sm uppercase tracking-wide;
       }
     }
 
     tbody {
       tr {
+        @apply transition-colors duration-200;
+
         &:nth-child(odd) {
+          @apply bg-orange-50;
+        }
+
+        &:hover {
           @apply bg-orange-100;
         }
+
+        td {
+          @apply px-4 py-3 text-sm text-gray-700;
+          border-bottom: 1px solid #f3f3f3;
+        }
       }
+    }
+
+    th,
+    td {
+      @apply px-4 py-3;
     }
   }
 

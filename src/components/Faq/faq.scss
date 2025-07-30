@@ -1,0 +1,25 @@
+.faq-wrapper {
+    .faq-item {
+        .faq-content-box {
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+
+            .faq-content {
+                overflow: hidden;
+            }
+        }
+
+
+        &.active {
+            .faq-content-box {
+                grid-template-rows: 1fr;
+            }
+        }
+
+        +.faq-item {
+            margin-top: 8px;
+        }
+    }
+}

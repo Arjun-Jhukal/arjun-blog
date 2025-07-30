@@ -56,6 +56,15 @@ export interface GalleryProps {
 		url: string;
 	}[]
 }
+export interface FaqProps {
+	__typename: string;
+	faqTitle: string;
+	questionAnswer: {
+		answer: string;
+		question: string
+	}[]
+
+}
 
 export interface SEOProps {
 	description: string;
@@ -68,7 +77,7 @@ export type BlogDetailT =
 	| BlogContentRecord
 	| SingleImageBlockRecord
 	| IframeRecordType
-	| QuoteRecordType | GalleryProps;
+	| QuoteRecordType | GalleryProps | FaqProps;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 
