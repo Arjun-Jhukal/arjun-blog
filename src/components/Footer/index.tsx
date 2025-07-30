@@ -68,7 +68,7 @@ export default function Footer() {
 				</div>
 				<div className="flex justify-between items-center py-6 lg:pt-8 mt-6 lg:mt-12 border-t-[1px] border-solid border-secondary">
 					<p>
-						&copy; {new Date().getFullYear()} Arjun Jhukal. All Right Reserved
+						&copy; {new Date().getFullYear()} AAA Inc. All Right Reserved
 					</p>
 					<Link href={"/privacy"}>Privacy Policy</Link>
 				</div>

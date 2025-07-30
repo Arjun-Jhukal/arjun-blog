@@ -17,7 +17,7 @@ export interface Category {
 }
 
 export interface Blog {
-	__typename: string;
+	__typename?: string;
 	title: string;
 	slug: string;
 	featuredImage: Image;
@@ -85,4 +85,5 @@ export interface BlogDetailContent extends Blog {
 	content: BlogDetailContentRecord;
 	publishedAt: string;
 	seo: SEOProps;
+	relatedPost: Blog[]
 }
