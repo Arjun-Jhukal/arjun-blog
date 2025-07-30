@@ -45,7 +45,15 @@ export const getBlogDetail = () => {
             alt
             url
           }
-      }
+        }
+        ... on FaqRecord {
+        __typename
+        faqTitle
+        questionAnswer {
+          answer
+          question
+         }
+        }
       }
       featuredImage {
         url

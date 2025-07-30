@@ -22,7 +22,7 @@ export default function MomentGallery({ data }: { data: GalleryProps }) {
             download={false}
 
         >
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2 mt-6">
                 {data?.galleryImage.map((img, i) => (
                     <a
                         key={i}
@@ -32,7 +32,7 @@ export default function MomentGallery({ data }: { data: GalleryProps }) {
                     >
                         <Image
                             src={img.url}
-                            alt={img.alt}
+                            alt={img?.alt || ""}
                             fill
                             className="object-cover"
                         />
