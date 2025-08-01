@@ -8,14 +8,16 @@
   >ul,
   >ol,
   >table,
-  >strong {
+  >strong,
+  >h3 {
 
     +p,
     +img,
     +ul,
     +ol,
     +table,
-    +strong {
+    +strong,
+    +h3 {
       @apply mt-4;
     }
   }
