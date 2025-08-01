@@ -7,11 +7,11 @@ export default function Quote({ data }: { data: QuoteRecordType }) {
     //   <p className="text-white">{data.quoteText}</p>
     //   {data?.quoteBy ? <em className="block mt-4 md:mt-8">{data.quoteBy}</em> : ""}
     // </div>
-    <div className="quote relative mb-6 mt-10 rounded-xl border border-primary bg-primary/10 p-6 text-primary shadow-md">
+    <div className="quote relative mb-6 mt-10 rounded-xl border border-primary bg-highlight/10 p-6 text-highlight shadow-md">
 
       <p className="relative z-10 text-lg font-medium leading-relaxed">{data.quoteText}</p>
       {data?.quoteBy && (
-        <em className="relative z-10 mt-4 block text-sm font-light italic text-primary/80 md:mt-6">
+        <em className="relative z-10 mt-4 block text-sm font-light italic text-primary md:mt-6 font-[600]">
           — {data.quoteBy}
         </em>
       )}

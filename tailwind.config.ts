@@ -20,13 +20,19 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#f13b3b",
+          DEFAULT: "#0D47A1", // Dark adventurous blue (sky/mountain)
         },
         secondary: {
-          DEFAULT: "#424851",
+          DEFAULT: "#264653", // Deep teal — rugged outdoor vibe
         },
-        ternary: {
-          DEFAULT: "#989da2",
+        accent: {
+          DEFAULT: "#F4A261", // Warm orange — ideal for CTAs or highlights
+        },
+        background: {
+          DEFAULT: "#F9FAFB", // Soft light gray background
+        },
+        highlight: {
+          DEFAULT: "#E9C46A", // Sandy tone — good for cost or food sections
         },
       },
 
