@@ -1,7 +1,25 @@
 import Link from "next/link";
 import "./footer.scss";
+import { getAllCategory } from "@/services/getAllCategory";
+import { performRequest } from "@/services/baseQuery";
 
-export default function Footer() {
+export default async function Footer() {
+	const QUERY: string = getAllCategory();
+
+	let categories: { id: string; name: string; slug: string }[] = [];
+	try {
+		const result = (await performRequest({
+			query: QUERY,
+		})) as { allCategories: { id: string; name: string; slug: string }[] };
+
+
+		categories = result?.allCategories || [];
+	}
+	catch (e) {
+		console.log("Error Server Didn't respond", e);
+	}
+
+
 	return (
 		<footer className="footer">
 			<div className="container">
@@ -29,10 +47,15 @@ export default function Footer() {
 						<div className="footer-link">
 							<h3>Category</h3>
 							<ul>
-								<li>
-									<Link href={"/"}>Nepal Permier League</Link>
-								</li>
-								<li>
+								{
+									categories.length && categories.map((category) => (
+										<li key={category.slug}>
+											<Link href={`/${category.id}`}>{category.name}</Link>
+										</li>
+
+									))
+								}
+								{/* <li>
 									<Link href={"/"}>General</Link>
 								</li>
 								<li>
@@ -40,7 +63,7 @@ export default function Footer() {
 								</li>
 								<li>
 									<Link href={"/"}>Information and Technology</Link>
-								</li>
+								</li> */}
 							</ul>
 						</div>
 					</div>

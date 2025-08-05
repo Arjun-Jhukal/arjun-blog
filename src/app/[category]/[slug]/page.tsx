@@ -79,11 +79,25 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 
 			return (
 				<>
-
-					<section className="news__detail my-[80px] md:my-[120px] ">
+					<section className="news__detail news__detail__hightlihgt mt-16 md:mt-[120px]">
 						<div className="container">
 							<div className="section-title lg:text-center max-w-[90%] mx-auto mb-4 md:mb-8">
-								{postDetail?.category.length > 0
+								<div className="breadcrumb flex justify-center gap-2">
+									<Link href="/" className="text-black font-600 hover:text-primary">Home</Link>
+									<span>/</span>
+									{postDetail?.category.length > 0
+										? postDetail.category.map((cat) => (
+											<Link className="text-black font-600 hover:text-primary"
+												href={`/${cat.id}`}
+												key={cat.slug}>
+												{cat.name}
+											</Link>
+										))
+										: ""}
+									<span>/</span>
+									<span>{postDetail?.title}</span>
+								</div>
+								{/* {postDetail?.category.length > 0
 									? postDetail.category.map((cat) => (
 										<Link
 											href={`/${cat.id}`}
@@ -92,7 +106,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 											{cat.name}
 										</Link>
 									))
-									: ""}
+									: ""} */}
 								<h1 className="mb-2 md:mb-3">{postDetail?.title}</h1>
 								<p className=" text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] text-primary">
 									{new Date(postDetail?.publishedAt).toLocaleDateString('en-US', {
@@ -102,17 +116,21 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 									})}
 								</p>
 							</div>
-
-							<div className="featured__image relative aspect-blog-image mb-4 md:mb-8">
-								<Image
-									src={postDetail?.featuredImage.url}
-									alt={postDetail?.featuredImage.alt}
-									layout="fill"
-									objectFit="cover"
-									priority
-								/>
-							</div>
-
+						</div>
+					</section>
+					<section className="news__detail__featured__image overflow-hidden">
+						<div className="featured__image relative aspect-blog-image ">
+							<Image
+								src={postDetail?.featuredImage.url}
+								alt={postDetail?.featuredImage.alt}
+								layout="fill"
+								objectFit="cover"
+								priority
+							/>
+						</div>
+					</section>
+					<section className="news__detail mb-[80px] mt-[40px] md:mb-[120px] ">
+						<div className="container">
 							<div className="detail__content__box max-w-[90%] xl:max-w-[80%] mx-auto">
 								<div className="author-block flex justify-start items-center mb-3 gap-4">
 									{postDetail?.writtenBy.authorProfile ? (
