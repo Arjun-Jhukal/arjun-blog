@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./header.scss";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -24,7 +25,14 @@ export default function Header() {
       <div className="container">
         <div className="header__content flex justify-between items-center">
           <h2 className="text-primary">
-            <Link href={"/"}>Arjun.</Link>
+            <Link href={"/"} className="relative w-[120px] h-[120px]">
+              <Image
+                src={"/logo.png"}
+                alt="Yatra with Jhukal - Logo"
+                fill
+                className="object-cover"
+              />
+            </Link>
           </h2>
           <ul className="header__menu flex justify-end items-center gap-8">
             {MenuItems.map((item, index) => {
