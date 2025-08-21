@@ -25,12 +25,12 @@ export default function Header() {
       <div className="container">
         <div className="header__content flex justify-between items-center">
           <h2 className="text-primary">
-            <Link href={"/"} className="relative w-[120px] h-[120px]">
+            <Link href={"/"} className="relative w-[160px] h-[80px]">
               <Image
                 src={"/logo.png"}
                 alt="Yatra with Jhukal - Logo"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </Link>
           </h2>
