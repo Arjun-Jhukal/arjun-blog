@@ -5,7 +5,7 @@ import { getAllBlogs } from '@/services/getBlogs';
 import { getAllBlogsByCategory } from '@/services/getBlogsByCategory';
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = "https://blog.arjunjhukal.com"
+const BASE_URL = "https://blog.arjunjhukal.com.np"
 
 const fetchCategories = async () => {
     const QUERY = getAllCategory();
@@ -30,9 +30,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blog = await fetchBlogs();
 
     let urls: MetadataRoute.Sitemap = [
-        // { url: BASE_URL, lastModified: new Date(), changeFrequency: 'monthly', },
-        // { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', },
-        // { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', },
+        { url: BASE_URL, lastModified: new Date(), changeFrequency: 'monthly', },
+        { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', },
+        { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', },
     ];
 
     for (const category of categories) {
