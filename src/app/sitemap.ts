@@ -30,9 +30,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blog = await fetchBlogs();
 
     let urls: MetadataRoute.Sitemap = [
-        { url: BASE_URL, lastModified: new Date(), changeFrequency: 'monthly', },
-        { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', },
-        { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', },
+        // { url: BASE_URL, lastModified: new Date(), changeFrequency: 'monthly', },
+        // { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', },
+        // { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', },
     ];
 
     for (const category of categories) {
