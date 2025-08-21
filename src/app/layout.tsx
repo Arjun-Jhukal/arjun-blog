@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -45,7 +45,12 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "/",
 	},
-	themeColor: "#0D47A1"
+	// themeColor: "#0D47A1"
+}
+
+
+export const viewport: Viewport = {
+	themeColor: 'black',
 }
 
 export default function RootLayout({
