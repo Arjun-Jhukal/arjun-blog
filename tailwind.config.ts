@@ -15,6 +15,7 @@ const config: Config = {
         lg: "960px",
         xl: "1140px",
         "2xl": "1320px", // Similar to Bootstrap, but slightly larger for screens > 1440px
+        "3xl": "1420px", // Similar to Bootstrap, but slightly larger for screens > 1440px
       },
     },
     extend: {
