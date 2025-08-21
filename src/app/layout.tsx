@@ -54,11 +54,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<Head>
-				{/* Google AdSense Script */}
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8678344611307925"
-					crossOrigin="anonymous"></script>
-			</Head>
+
 			<body className={`${muli.className} antialiased`}>
 				<Header />
 				<main className="main">{children}</main>
