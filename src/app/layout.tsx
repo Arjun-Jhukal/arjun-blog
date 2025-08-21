@@ -41,6 +41,10 @@ export const metadata: Metadata = {
 		description: "Join me on my global adventures and life journeys around the world",
 		images: ['https://blog.arjunjhukal.com.np/twitter-image.jpg'],
 	},
+	metadataBase: new URL("https://blog.arjunjhukal.com.np"),
+	alternates: {
+		canonical: "/",
+	},
 }
 
 export default function RootLayout({
