@@ -24,10 +24,6 @@
   }
 
   &.featured__news {
-    margin-bottom: 0 !important;
-
-
-
     .news__content {
       @apply max-w-[90%] lg:max-w-[75%];
     }
