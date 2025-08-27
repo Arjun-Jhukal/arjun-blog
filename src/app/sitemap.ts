@@ -5,6 +5,8 @@ import { getAllBlogs } from '@/services/getBlogs';
 import { getAllBlogsByCategory } from '@/services/getBlogsByCategory';
 import type { MetadataRoute } from 'next'
 
+export const revalidate = 48600;
+
 const BASE_URL = "https://blog.arjunjhukal.com.np"
 
 const fetchCategories = async () => {

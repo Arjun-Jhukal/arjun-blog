@@ -65,6 +65,21 @@ export interface FaqProps {
 	}[]
 
 }
+export interface PageBannerProps {
+	__typename: string;
+	pageBannerBrief: string;
+	pageBannerImage: {
+		video?: {
+			thumbnailUrl: string;
+			mp4Url: string;
+		}
+		alt: string;
+		url: string
+	};
+	pageBannerSubTitle: string;
+	pageBannerTitle: string;
+}
+
 
 export interface SEOProps {
 	description: string;
@@ -77,7 +92,7 @@ export type BlogDetailT =
 	| BlogContentRecord
 	| SingleImageBlockRecord
 	| IframeRecordType
-	| QuoteRecordType | GalleryProps | FaqProps;
+	| QuoteRecordType | GalleryProps | FaqProps | PageBannerProps;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 
