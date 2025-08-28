@@ -9,6 +9,7 @@ import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
+import ReviewForm from "@/components/Forms/ReviewForm";
 
 export const revalidate = 60;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -171,6 +172,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 							</div>
 						</div>
 					</section>
+					<ReviewForm />
 					<section className="related__blog mb-[80px] md:mb-[120px]">
 						<div className="container">
 							<div className="section-title mb-4 md:mb-8">

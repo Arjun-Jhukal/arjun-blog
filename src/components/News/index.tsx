@@ -6,12 +6,14 @@ import "./news.scss";
 import { Blog } from "@/interface";
 
 export default function SingleNewsBlock({ data }: { data: Blog }) {
+	var slug = `${data.category[0].id}}`
+	console.log(slug);
 	return (
 		<div className="news__item">
 			{data?.featuredImage?.url ? (
 				<div className="news__image relative aspect-square  sm:aspect-blog-image">
 					<Link
-						href={`${data.category[0].slug}/${data.slug}`}
+						href={`/${data.category[0].slug}/${data.slug}`}
 						className="block">
 						<Image
 							src={data.featuredImage?.url}
@@ -26,7 +28,7 @@ export default function SingleNewsBlock({ data }: { data: Blog }) {
 			)}
 			<div className="news__content">
 				{data.category.length > 0 ? (
-					<Link href={`${data.category[0].id}`} className="category">
+					<Link href={`/${data.category[0].id}`} className="category">
 						{data.category[0].name}
 					</Link>
 				) : (
@@ -35,7 +37,7 @@ export default function SingleNewsBlock({ data }: { data: Blog }) {
 
 				{data?.title ? (
 					<h2>
-						<Link href={`${data.category[0].slug}/${data.slug}`}>
+						<Link href={`/${data.category[0].slug}/${data.slug}`}>
 							{data.title}
 						</Link>
 					</h2>
