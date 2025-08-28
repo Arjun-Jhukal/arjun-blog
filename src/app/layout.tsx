@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Head from "next/head";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@next/third-parties/google";
 const muli = Mulish({
 	subsets: ["cyrillic"],
 	weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -60,9 +61,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-
 			<body className={`${muli.className} antialiased`}>
 				<Analytics />
+				<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID ?? ""} />
 				<Header />
 				<main className="main">{children}</main>
 				<Footer />

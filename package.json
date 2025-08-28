@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@datocms/cda-client": "^0.2.2",
+    "@next/third-parties": "^15.5.2",
     "@vercel/analytics": "^1.5.0",
     "graphql-request": "^7.1.0",
     "lg-fullscreen": "^1.2.1",

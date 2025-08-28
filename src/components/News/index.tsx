@@ -7,7 +7,7 @@ import { Blog } from "@/interface";
 
 export default function SingleNewsBlock({ data }: { data: Blog }) {
 	var slug = `${data.category[0].id}}`
-	console.log(slug);
+	// console.log(slug);
 	return (
 		<div className="news__item">
 			{data?.featuredImage?.url ? (
