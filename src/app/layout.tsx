@@ -17,9 +17,6 @@ export const metadata: Metadata = {
 	},
 	description: "Join Arjun Jhukal on his global adventures and life journeys. Discover travel tips, cultural insights, and personal stories from around the world.",
 	keywords: ["travel blog", "adventure", "cultural experiences", "travel tips", "wanderlust", "Arjun Jhukal"],
-	other: {
-		'google-adsense-account': 'ca-pub-8678344611307925'
-	},
 	openGraph: {
 		title: "Arjun Jhukal's Travel & Life Blog",
 		description: "Exploring the world one story at a time - travel adventures and life experiences with Arjun Jhukal",
@@ -44,6 +41,9 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://blog.arjunjhukal.com.np"),
 	alternates: {
 		canonical: "/",
+	},
+	other: {
+		'google-adsense-account': 'ca-pub-8678344611307925',
 	},
 	// themeColor: "#0D47A1"
 }
