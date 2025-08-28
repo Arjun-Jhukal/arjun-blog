@@ -32,7 +32,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 		openGraph: {
 			title: postDetail?.seo?.title,
 			description: postDetail?.seo?.description,
-
 			images: [
 				{
 					url: postDetail?.seo?.image?.url,
