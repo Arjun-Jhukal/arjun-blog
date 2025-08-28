@@ -87,6 +87,7 @@ export const getBlogDetail = () => {
       title
       slug
       category {
+        id
         name
         slug
       }
