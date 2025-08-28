@@ -63,7 +63,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${muli.className} antialiased`}>
 				<Analytics />
-				<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID ?? ""} />
+				{process.env.NEXT_PUBLIC_GAID && (
+					<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
+				)}
 				<Header />
 				<main className="main">{children}</main>
 				<Footer />
