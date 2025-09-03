@@ -64,7 +64,7 @@ export default function SingleNewsBlock({ data }: { data: Blog }) {
 				)}
 				{data?.brief ? <p>{data.brief}</p> : ""}
 				<Link
-					href={`${data.category[0].slug}/${data.slug}`}
+					href={`/${data.category[0].slug}/${data.slug}`}
 					className="read__more">
 					+ Read More
 				</Link>

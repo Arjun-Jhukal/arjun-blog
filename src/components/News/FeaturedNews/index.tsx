@@ -34,7 +34,7 @@ export default function FeaturedNews({ data }: { data: Blog }) {
 
                 {data?.title ? (
                     <h2>
-                        <Link href={`${data.category[0].slug}/${data.slug}`}>
+                        <Link href={`/${data.category[0].slug}/${data.slug}`}>
                             {data.title}
                         </Link>
                     </h2>
@@ -61,7 +61,7 @@ export default function FeaturedNews({ data }: { data: Blog }) {
                 )}
                 {data?.brief ? <p>{data.brief}</p> : ""}
                 <Link
-                    href={`${data.category[0].slug}/${data.slug}`}
+                    href={`/${data.category[0].slug}/${data.slug}`}
                     className="read__more">
                     + Read More
                 </Link>
