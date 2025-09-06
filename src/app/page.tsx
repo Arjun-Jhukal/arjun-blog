@@ -5,6 +5,7 @@ import { getAllBlogs } from "@/services/getBlogs";
 import { Blog } from "@/interface";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import FeaturedNews from "@/components/News/FeaturedNews";
+import DisplayAd from "@/components/ads/DisplayAd";
 
 export const revalidate = 30;
 
@@ -40,12 +41,15 @@ export default function Home() {
 	};
 
 	return (
-		<section className="blog__list my-[80px] md:my-[120px]">
-			<div className="container">
-				<Suspense fallback={<LoadingNewsBlock />}>
-					<BlogList />
-				</Suspense>
-			</div>
-		</section>
+		<>
+			<section className="blog__list my-[80px] md:my-[120px]">
+				<div className="container">
+					<Suspense fallback={<LoadingNewsBlock />}>
+						<BlogList />
+					</Suspense>
+				</div>
+			</section>
+			<DisplayAd />
+		</>
 	);
 }
