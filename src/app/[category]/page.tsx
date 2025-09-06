@@ -1,3 +1,4 @@
+import MultiplexAd from "@/components/ads/MultiplexAd";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
 import { Blog, PageBannerProps, BlogDetailT } from "@/interface";
@@ -55,8 +56,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 	};
 
 	return (
-		<Suspense fallback={<LoadingNewsBlock />}>
-			<BlogList />
-		</Suspense>
+		<>
+			<Suspense fallback={<LoadingNewsBlock />}>
+				<BlogList />
+			</Suspense>
+			<MultiplexAd />
+		</>
 	);
 }

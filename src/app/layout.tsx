@@ -6,6 +6,8 @@ import Head from "next/head";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next"
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
+
 const muli = Mulish({
 	subsets: ["cyrillic"],
 	weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -69,6 +71,12 @@ export default function RootLayout({
 				<Header />
 				<main className="main">{children}</main>
 				<Footer />
+				<Script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8678344611307925"
+					crossOrigin="anonymous"
+					strategy="afterInteractive"
+				/>
 			</body>
 		</html>
 	);
