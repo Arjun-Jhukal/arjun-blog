@@ -1,15 +1,13 @@
-import React, { Suspense } from "react";
+import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
+import SingleNewsBlock from "@/components/News";
+import { BlogDetailContent, BlogDetailT } from "@/interface";
+import { performRequest } from "@/services/baseQuery";
+import { getBlogDetail } from "@/services/getBlogDetail";
+import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
 import Image from "next/legacy/image";
 import Link from "next/link";
+import React, { Suspense } from "react";
 import "./detail.scss";
-import { getBlogDetail } from "@/services/getBlogDetail";
-import { performRequest } from "@/services/baseQuery";
-import { BlogDetailContent, BlogDetailT } from "@/interface";
-import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
-import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
-import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
-import SingleNewsBlock from "@/components/News";
-import ReviewForm from "@/components/Forms/ReviewForm";
 
 export const revalidate = 60;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -171,7 +169,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 							</div>
 						</div>
 					</section>
-					<ReviewForm />
+					{/* <ReviewForm /> */}
 					<section className="related__blog mb-[80px] md:mb-[120px]">
 						<div className="container">
 							<div className="section-title mb-4 md:mb-8">
