@@ -8,7 +8,16 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-    
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/nepal-premier-league/npl-2082',
+        destination: '/nepal-premier-league/npl-2082-team-and-players',
+        permanent: true,
+      },
+    ];
   },
 };
 
