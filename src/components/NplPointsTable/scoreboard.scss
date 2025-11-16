@@ -1,0 +1,21 @@
+.npl__points__table {
+
+    th,
+    td {
+        padding: 8px 12px;
+    }
+
+    .game__status {
+        border: 2px solid transparent;
+
+        &.won {
+            border-color: green;
+            color: green;
+        }
+
+        &.lost {
+            border-color: red;
+            color: red;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import DisplayAd from "@/components/ads/DisplayAd";
 import LoadingDetailBlock from "@/components/Fallbacks/DetailFallback";
 import SingleNewsBlock from "@/components/News";
 import { BlogDetailContent, BlogDetailT } from "@/interface";
@@ -163,7 +164,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 											<React.Fragment key={section.__typename + index.toString()}>
 												{RenderComponent(section)}
 											</React.Fragment>
-										);
+										)
 									},
 								)}
 							</div>
@@ -199,6 +200,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 			<Suspense fallback={<LoadingDetailBlock />}>
 				<BlogDetail />
 			</Suspense>
+			<DisplayAd />
 
 		</>
 	);

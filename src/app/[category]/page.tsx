@@ -1,7 +1,7 @@
 import MultiplexAd from "@/components/ads/MultiplexAd";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
-import { Blog, PageBannerProps, BlogDetailT } from "@/interface";
+import { Blog, BlogDetailT } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory"; // Updated query
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";

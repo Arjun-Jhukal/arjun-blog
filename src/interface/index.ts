@@ -1,3 +1,4 @@
+
 export interface Image {
 	url: string;
 	alt: string;
@@ -80,6 +81,30 @@ export interface PageBannerProps {
 	pageBannerTitle: string;
 }
 
+export interface NPLTableRowProps {
+	nplTeam: {
+		id: string;
+		teamName: string;
+		teamLogo: {
+			url: string;
+			alt: string;
+		}
+	};
+	logo: string;
+	matchPlayed: number;
+	matchWon: number;
+	matchLost: number;
+	matchDraw: number | null;
+	netRunRate: number;
+	totalPoints: number;
+	recentForm: string;
+}
+export interface NPLPointsTableProps {
+	__typename: string;
+	nplPointsTableTitle: string;
+	nplPoints: NPLTableRowProps[]
+}
+
 
 export interface SEOProps {
 	description: string;
@@ -92,7 +117,11 @@ export type BlogDetailT =
 	| BlogContentRecord
 	| SingleImageBlockRecord
 	| IframeRecordType
-	| QuoteRecordType | GalleryProps | FaqProps | PageBannerProps;
+	| QuoteRecordType
+	| GalleryProps
+	| FaqProps
+	| PageBannerProps
+	| NPLPointsTableProps;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 

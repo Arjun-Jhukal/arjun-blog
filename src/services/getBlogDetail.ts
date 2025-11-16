@@ -46,6 +46,28 @@ export const getBlogDetail = () => {
             url
           }
         }
+          ... on NplPointsTableRecord {
+        __typename
+        id
+        nplPointsTableTitle
+        nplPoints {
+          matchDraw
+          matchLost
+          matchPlayed
+          matchWon
+          netRunRate
+          totalPoints
+          recentForm
+          nplTeam {
+            id
+            teamName
+            teamLogo {
+              url
+              alt
+            }
+          }
+        }
+      }
         ... on FaqRecord {
         __typename
         faqTitle
