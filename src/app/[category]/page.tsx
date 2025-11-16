@@ -5,6 +5,7 @@ import { Blog, BlogDetailT } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory"; // Updated query
 import { RenderComponent } from "@/utils/renderComponent/componentrenderer";
+import { notFound } from "next/navigation";
 
 import React, { Suspense } from "react";
 
@@ -23,6 +24,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 			const blogs = data?.allPosts || [];
 			const categoryData = data?.category || null;
 
+			console.log(categoryData);
+			if (!categoryData) {
+				notFound();
+			}
 			return (
 				<>
 					{/* Render Dynamic Sections (categoryBlocks) */}
@@ -51,7 +56,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 			);
 		} catch (e) {
 			console.log(e);
-			return <p>Error loading category page.</p>;
+			notFound();
 		}
 	};
 
