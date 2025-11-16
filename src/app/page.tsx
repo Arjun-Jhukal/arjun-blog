@@ -1,16 +1,16 @@
-import { Suspense } from "react";
-import SingleNewsBlock from "@/components/News";
-import { performRequest } from "@/services/baseQuery";
-import { getAllBlogs } from "@/services/getBlogs";
-import { Blog } from "@/interface";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
+import SingleNewsBlock from "@/components/News";
 import FeaturedNews from "@/components/News/FeaturedNews";
 import DisplayAd from "@/components/ads/DisplayAd";
+import { Blog } from "@/interface";
+import { performRequest } from "@/services/baseQuery";
+import { getAllBlogs } from "@/services/getBlogs";
+import { Suspense } from "react";
 
 export const revalidate = 30;
 
 export default function Home() {
-	const QUERY: string = getAllBlogs(25);
+	const QUERY: string = getAllBlogs(40);
 
 	const BlogList = async () => {
 		try {
