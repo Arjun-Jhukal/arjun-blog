@@ -10,8 +10,8 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
     return (
         <div className="npl__points__table">
             <h2 className="mb-8">NPL 2082 Scorebard</h2>
-            <div className="table__wrapper">
-                <table className="w-full">
+            <div className="table__wrapper overflow-auto">
+                <table className="w-full min-w-[720px]">
                     <thead>
                         <tr>
                             <th className="text-start bg-primary text-white font-[600]">POS</th>
@@ -19,7 +19,7 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
                             <th className="text-start bg-primary text-white font-[600]">P</th>
                             <th className="text-start bg-primary text-white font-[600]">W</th>
                             <th className="text-start bg-primary text-white font-[600]">L</th>
-                            <th className="text-start bg-primary text-white font-[600]">D</th>
+                            <th className="text-start bg-primary text-white font-[600]">NR</th>
                             <th className="text-start bg-primary text-white font-[600]">NRR</th>
                             <th className="text-start bg-primary text-white font-[600]">PTS</th>
                             <th className="text-start bg-primary text-white font-[600]">Recent Form</th>
