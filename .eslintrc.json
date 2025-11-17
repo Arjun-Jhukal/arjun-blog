@@ -3,6 +3,8 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/no-explicit-any": "off",
+
+    
     "no-unused-vars": "off", // Disable the base ESLint rule for unused vars
     // "@typescript-eslint/consistent-type-definitions": "off"
 
