@@ -1,6 +1,7 @@
 import MultiplexAd from "@/components/ads/MultiplexAd";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
+import NplTeamList from "@/components/Sections/NplTeamList";
 import { Blog, BlogDetailT } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory"; // Updated query

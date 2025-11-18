@@ -5,8 +5,9 @@ import MomentGallery from "@/components/moment";
 import NplPointsTable from "@/components/NplPointsTable";
 import InnerPageBanner from "@/components/organism/pageBanner";
 import Quote from "@/components/Quote";
+import NplTeamList from "@/components/Sections/NplTeamList";
 import SingleImage from "@/components/SingleImage";
-import { BlogContentRecord, BlogDetailT, FaqProps, GalleryProps, IframeRecordType, NPLPointsTableProps, PageBannerProps, QuoteRecordType, SingleImageBlockRecord } from "@/interface";
+import { BlogContentRecord, BlogDetailT, FaqProps, GalleryProps, IframeRecordType, NPLPointsTableProps, NplTeamControllerProps, PageBannerProps, QuoteRecordType, SingleImageBlockRecord } from "@/interface";
 
 export const RenderComponent = (section: BlogDetailT) => {
   switch (section.__typename) {
@@ -26,5 +27,7 @@ export const RenderComponent = (section: BlogDetailT) => {
       return <InnerPageBanner data={section as PageBannerProps} />;
     case "NplPointsTableRecord":
       return <NplPointsTable data={section as NPLPointsTableProps} />;
+    case "NplTeamVisibilityControllerRecord":
+      return <NplTeamList data={section as NplTeamControllerProps} />;
   }
 };

@@ -105,6 +105,11 @@ export interface NPLPointsTableProps {
 	nplPoints: NPLTableRowProps[]
 }
 
+export interface NplTeamControllerProps{
+	__typename:string;
+	showTeamsAndOwners:boolean;
+}
+
 
 export interface SEOProps {
 	description: string;
@@ -121,7 +126,9 @@ export type BlogDetailT =
 	| GalleryProps
 	| FaqProps
 	| PageBannerProps
-	| NPLPointsTableProps;
+	| NPLPointsTableProps
+	| NplTeamControllerProps
+	;
 
 export type BlogDetailContentRecord = BlogDetailT[];
 

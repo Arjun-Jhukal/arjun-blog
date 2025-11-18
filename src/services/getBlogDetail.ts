@@ -46,7 +46,11 @@ export const getBlogDetail = () => {
             url
           }
         }
-          ... on NplPointsTableRecord {
+          ... on NplTeamVisibilityControllerRecord {
+        __typename
+        showTeamsAndOwners
+      }
+       ... on NplPointsTableRecord {
         __typename
         id
         nplPointsTableTitle
