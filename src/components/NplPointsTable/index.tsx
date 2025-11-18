@@ -1,15 +1,25 @@
 import { NPLPointsTableProps } from "@/interface";
 import "./scoreboard.scss";
+
 export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) {
+
+    // Convert "+ 0.75" → 0.75
+    const parseNRR = (nrr: string) => Number(nrr.replace(/\s+/g, ""));
+
     const sortedTeams = [...data.nplPoints].sort((a, b) => {
+        const nrrA = parseNRR(a.netRunRate);
+        const nrrB = parseNRR(b.netRunRate);
+
         if (b.totalPoints === a.totalPoints) {
-            return b.netRunRate - a.netRunRate; // secondary sorting
+            return nrrB - nrrA;
         }
         return b.totalPoints - a.totalPoints;
     });
+
     return (
         <div className="npl__points__table">
-            <h2 className="mb-8">NPL 2082 Scorebard</h2>
+            <h2 className="mb-8">NPL 2082 Scoreboard</h2>
+
             <div className="table__wrapper overflow-auto">
                 <table className="w-full min-w-[720px]">
                     <thead>
@@ -25,20 +35,26 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
                             <th className="text-start bg-primary text-white font-[600]">Recent Form</th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        {data?.nplPoints.map((team, index) => (
+                        {sortedTeams.map((team, index) => (
                             <tr
                                 key={team.nplTeam.teamName}
-                                className={`border-b border-gray-200 hover:bg-blue-100 transition-colors ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                                    }`}
+                                className={`border-b border-gray-200 hover:bg-blue-100 
+                                    ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                             >
                                 <td>{index + 1}</td>
                                 <td>
                                     <div className="flex gap-2">
-                                        <img src={team.nplTeam.teamLogo.url} alt={team.nplTeam.teamLogo.url || team?.nplTeam.teamName} className="w-6 h-6 rounded-full object-cover" />
-                                        <strong className="text-lg">{team?.nplTeam.teamName}</strong>
+                                        <img
+                                            src={team.nplTeam.teamLogo.url}
+                                            alt={team.nplTeam.teamName}
+                                            className="w-6 h-6 rounded-full object-cover"
+                                        />
+                                        <strong className="text-lg">{team.nplTeam.teamName}</strong>
                                     </div>
                                 </td>
+
                                 <td>{team.matchPlayed}</td>
                                 <td>{team.matchWon}</td>
                                 <td>{team.matchLost}</td>
@@ -51,12 +67,10 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
                                         {team.recentForm.split("").map((r, i) => (
                                             <span
                                                 key={i}
-                                                className={`uppercase text-[10px] w-6 h-6 rounded-full flex justify-center items-center game__status ${r.toLowerCase() === "w"
-                                                    ? "won"
-                                                    : r.toLowerCase() === "l"
-                                                        ? "lost"
-                                                        : "draw"
-                                                    }`}
+                                                className={`uppercase text-[10px] w-6 h-6 rounded-full flex justify-center items-center game__status 
+                                                    ${r.toLowerCase() === "w" ? "won"
+                                                        : r.toLowerCase() === "l" ? "lost"
+                                                            : "draw"}`}
                                             >
                                                 {r}
                                             </span>
@@ -69,5 +83,5 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
                 </table>
             </div>
         </div>
-    )
+    );
 }

@@ -95,7 +95,7 @@ export interface NPLTableRowProps {
 	matchWon: number;
 	matchLost: number;
 	matchDraw: number | null;
-	netRunRate: number;
+	netRunRate: string;
 	totalPoints: number;
 	recentForm: string;
 }
