@@ -51,7 +51,7 @@ export default function NplPointsTable({ data }: { data: NPLPointsTableProps }) 
                                             alt={team.nplTeam.teamName}
                                             className="w-6 h-6 rounded-full object-cover"
                                         />
-                                        <strong className="text-lg">{team.nplTeam.teamName}</strong>
+                                        <strong className="text-sm">{team.nplTeam.teamName}</strong>
                                     </div>
                                 </td>
 
