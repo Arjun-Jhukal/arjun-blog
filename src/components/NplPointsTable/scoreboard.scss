@@ -1,5 +1,44 @@
 .npl__points__table {
 
+    tr {
+
+        th,
+        td {
+            &:nth-child(2) {
+                position: sticky;
+                left: 0;
+            }
+        }
+
+        &:nth-child(odd) {
+
+            td:nth-child(1),
+            td:nth-child(2) {
+                background: #f9fafb;
+                /* bg-gray-50 */
+            }
+        }
+
+        &:nth-child(even) {
+
+            td:nth-child(1),
+            td:nth-child(2) {
+                background: #ffffff;
+                /* bg-white */
+            }
+        }
+
+        /* Hover state */
+        &:hover {
+
+            td:nth-child(1),
+            td:nth-child(2) {
+                background: #dbeafe;
+                /* bg-blue-100 */
+            }
+        }
+    }
+
     th,
     td {
         padding: 8px 12px;
