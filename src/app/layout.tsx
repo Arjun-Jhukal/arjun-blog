@@ -49,6 +49,7 @@ export const metadata: Metadata = {
 	other: {
 		'google-adsense-account': 'ca-pub-8678344611307925',
 	},
+	manifest: '/manifest.json',
 	// themeColor: "#0D47A1"
 }
 
