@@ -58,7 +58,7 @@ export default function InstallPrompt() {
     if (!showPrompt) return null;
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r bg-primary text-white shadow-lg">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <svg
@@ -75,8 +75,8 @@ export default function InstallPrompt() {
                         />
                     </svg>
                     <div>
-                        <p className="font-semibold text-sm md:text-base">Install Arjun's Blog</p>
-                        <p className="text-xs md:text-sm opacity-90">Get quick access from your home screen</p>
+                        <h2 className="font-semibold text-base md:text-base text-white">Install Yatra with Jhukal</h2>
+                        <p className="text-xs md:text-sm opacity-90 text-white">Get quick access from your home screen</p>
                     </div>
                 </div>
 
