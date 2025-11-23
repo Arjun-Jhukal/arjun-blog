@@ -1,7 +1,6 @@
 import MultiplexAd from "@/components/ads/MultiplexAd";
 import LoadingNewsBlock from "@/components/Fallbacks/NewsFallback";
 import SingleNewsBlock from "@/components/News";
-import NplTeamList from "@/components/Sections/NplTeamList";
 import { Blog, BlogDetailT } from "@/interface";
 import { performRequest } from "@/services/baseQuery";
 import { getAllBlogsByCategory } from "@/services/getBlogsByCategory"; // Updated query
@@ -39,7 +38,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 					))}
 
 					{/* Blog List */}
-					<section className="blog__list my-[80px] md:my-[120px]">
+					{blogs.length > 0 ? <section className="blog__list my-[80px] md:my-[120px]">
 						<div className="container">
 							<div className="md:grid grid-cols-2 gap-x-8 gap-y-16">
 								{blogs.length > 0 &&
@@ -52,7 +51,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 									))}
 							</div>
 						</div>
-					</section>
+					</section> : ""}
 				</>
 			);
 		} catch (e) {

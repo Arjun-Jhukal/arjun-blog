@@ -22,6 +22,10 @@ export const getAllBlogsByCategory = (categoryId: string) => {
             pageBannerSubTitle
             pageBannerTitle
           }
+           ... on ToggleQuestionVisibilityRecord {
+            __typename
+            showLicenseQuestion
+            }
         }
       }
       allPosts(filter: { category: { eq: "${categoryId}" } }) {

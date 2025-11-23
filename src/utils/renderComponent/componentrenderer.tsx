@@ -1,6 +1,7 @@
 import BlogDetail from "@/components/BlogDetail";
 import Faq from "@/components/Faq";
 import YoutubeIframe from "@/components/Iframe";
+import LikhitExamSelectionBlock from "@/components/LikhitExam";
 import MomentGallery from "@/components/moment";
 import NplPointsTable from "@/components/NplPointsTable";
 import InnerPageBanner from "@/components/organism/pageBanner";
@@ -29,5 +30,7 @@ export const RenderComponent = (section: BlogDetailT) => {
       return <NplPointsTable data={section as NPLPointsTableProps} />;
     case "NplTeamVisibilityControllerRecord":
       return <NplTeamList data={section as NplTeamControllerProps} />;
+    case "ToggleQuestionVisibilityRecord":
+      return <LikhitExamSelectionBlock />;
   }
 };
