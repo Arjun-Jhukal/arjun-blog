@@ -1,7 +1,7 @@
 {
-    "name": "Arjun's Blog",
-    "short_name": "Arjun Blog",
-    "description": "Personal blog by Arjun",
+    "name": "Yatra With Jhukal",
+    "short_name": "YWA",
+    "description": "NPL | TRAVEL Content",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -9,23 +9,23 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/icon-192x192.png",
+            "src": "/logo.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icon-256x256.png",
+            "src": "/logo.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/icon-384x384.png",
+            "src": "/logo.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/icon-512x512.png",
+            "src": "/logo.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
