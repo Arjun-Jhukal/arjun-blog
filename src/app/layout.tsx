@@ -7,6 +7,7 @@ import { Mulish } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
+import InstallPrompt from "./InstallPrompt";
 
 const muli = Mulish({
 	subsets: ["cyrillic"],
@@ -71,6 +72,7 @@ export default function RootLayout({
 				<Link target="_blank" href={"https://www.youtube.com/watch?v=k5gUdTxqq38"} className="w-full block bg-primary text-white text-center p-2 sticky top-0 right-0 left-0 z-10">
 					<div className=""><span className="underline">Click</span> to Join us on our Youtube Channel.</div>
 				</Link>
+				<InstallPrompt />
 				<Header />
 				<main className="main">{children}</main>
 				<Footer />
