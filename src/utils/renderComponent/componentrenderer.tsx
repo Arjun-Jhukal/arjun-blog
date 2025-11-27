@@ -6,11 +6,12 @@ import MomentGallery from "@/components/moment";
 import NplPointsTable from "@/components/NplPointsTable";
 import InnerPageBanner from "@/components/organism/pageBanner";
 import Quote from "@/components/Quote";
+import NplSeasonList from "@/components/Sections/NplSeasonList";
 import NplTeamList from "@/components/Sections/NplTeamList";
 import SingleImage from "@/components/SingleImage";
-import { BlogContentRecord, BlogDetailT, FaqProps, GalleryProps, IframeRecordType, NPLPointsTableProps, NplTeamControllerProps, PageBannerProps, QuoteRecordType, SingleImageBlockRecord } from "@/interface";
+import { BlogContentRecord, BlogDetailT, FaqProps, GalleryProps, IframeRecordType, NPLPointsTableProps, NplTeamControllerProps, PageBannerProps, PageContentBlocks, QuoteRecordType, SingleImageBlockRecord } from "@/interface";
 
-export const RenderComponent = (section: BlogDetailT) => {
+export const RenderComponent = (section: BlogDetailT | PageContentBlocks) => {
   switch (section.__typename) {
     case "BlogContentRecord":
       return <BlogDetail data={section as BlogContentRecord} />;
@@ -32,5 +33,7 @@ export const RenderComponent = (section: BlogDetailT) => {
       return <NplTeamList data={section as NplTeamControllerProps} />;
     case "ToggleQuestionVisibilityRecord":
       return <LikhitExamSelectionBlock />;
+    case "ToggleNplScheduleVisibiltiyOnPageRecord":
+      return <NplSeasonList />;
   }
 };

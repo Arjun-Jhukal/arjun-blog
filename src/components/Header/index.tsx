@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./header.scss";
-import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -12,6 +12,10 @@ export default function Header() {
     {
       label: "Home",
       url: "/",
+    },
+    {
+      label: "Nepal Premier League",
+      url: "/npl",
     },
     {
       label: "Connect",

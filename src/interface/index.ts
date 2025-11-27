@@ -105,9 +105,9 @@ export interface NPLPointsTableProps {
 	nplPoints: NPLTableRowProps[]
 }
 
-export interface NplTeamControllerProps{
-	__typename:string;
-	showTeamsAndOwners:boolean;
+export interface NplTeamControllerProps {
+	__typename: string;
+	showTeamsAndOwners: boolean;
 }
 
 
@@ -117,6 +117,27 @@ export interface SEOProps {
 	title: string;
 	twitterCard: string;
 }
+
+export interface AboutMissionRecord {
+	id: string;
+	__typename: "AboutMissionRecord";
+}
+
+export interface AboutVisionRecord {
+	id: string;
+	__typename: "AboutVisionRecord";
+}
+
+export interface CtaRecord {
+	id: string;
+	__typename: "CtaRecord";
+}
+export interface ToggleNplScheduleVisibilityOnPageRecord {
+	id: string;
+	__typename: "ToggleNplScheduleVisibiltiyOnPageRecord";
+	showAllSchedule: boolean;
+}
+
 
 export type BlogDetailT =
 	| BlogContentRecord
@@ -130,6 +151,15 @@ export type BlogDetailT =
 	| NplTeamControllerProps
 	;
 
+export type PageContentBlocks =
+	| AboutMissionRecord
+	| AboutVisionRecord
+	| CtaRecord
+	| FaqProps
+	| GalleryProps
+	| ToggleNplScheduleVisibilityOnPageRecord
+	| IframeRecordType;
+
 export type BlogDetailContentRecord = BlogDetailT[];
 
 export interface BlogDetailContent extends Blog {
@@ -138,3 +168,77 @@ export interface BlogDetailContent extends Blog {
 	seo: SEOProps;
 	relatedPost: Blog[]
 }
+
+
+export interface PageResponse {
+	page: {
+		pageTitle: string;
+		seo: SEOProps;
+		content: PageContentBlocks[];
+	};
+}
+
+export interface NplSeasonParams {
+	allNplSeasons: {
+		__typename: string;
+		seasonName: string;
+		seasonSlug: string;
+	}[]
+}
+export interface NplScheduleListParams {
+	allNplSchedules: {
+		__typename: string;
+		nplScheduleSlug: string;
+		scheduleTitle: string;
+		scheduleImage: {
+			url: string;
+			alt: string;
+		}
+	}[]
+}
+
+export interface NplScheduleSeo {
+	description: string;
+	title: string;
+	twitterCard: string;
+	image: {
+		url: string;
+		alt: string;
+	};
+}
+
+export interface NplScheduleContentItem {
+	matchDayAndTime: string;
+	teamA: {
+		teamName: string;
+		teamLogo: {
+			alt: string
+			url: string
+		}
+	};
+	teamB: {
+		teamName: string;
+		teamLogo: {
+			alt: string
+			url: string
+		}
+	};
+	overbowledA: number | null,
+	overbowledB: number | null,
+	scoreA: number | null,
+	scoreB: number | null,
+	wicketDownA: number | null,
+	wicketDownB: number | null
+}
+
+export interface NplScheduleBySlug {
+	nplSchedule: {
+		id: string;
+		__typename: string;
+		nplScheduleSeo: NplScheduleSeo;
+		scheduleTitle: string;
+		nplScheduleSlug: string;
+		nplScheduleContent: NplScheduleContentItem[];
+	};
+}
+

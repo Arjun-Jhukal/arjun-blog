@@ -24,7 +24,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 			const blogs = data?.allPosts || [];
 			const categoryData = data?.category || null;
 
-			console.log(categoryData);
 			if (!categoryData) {
 				notFound();
 			}

@@ -8,6 +8,7 @@ export const getAllBlogsByCategory = (categoryId: string) => {
         categoryBlocks {
           __typename
           ... on PageBannerRecord {
+          __typename
             id
             pageBannerBrief
            

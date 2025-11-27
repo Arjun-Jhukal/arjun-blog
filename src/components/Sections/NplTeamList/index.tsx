@@ -31,8 +31,8 @@ export default async function NplTeamList({ data }: { data: NplTeamControllerPro
     return (
         <section className="npl__team__listing my-[80px] md:my-[120px]">
             <div className="container">
-                <div className="section__title mb-6 lg:mb-12 text-center lg:max-w-[80%] mx-auto">
-                    <h1>Nepal Premier League Teams, Owner and Wins</h1>
+                <div className="section__title mb-6 lg:mb-12  lg:max-w-[80%] ">
+                    <h2>Nepal Premier League Teams, Owner and Wins</h2>
                     <p className='mt-4'>Get the full breakdown of the inaugural Nepal Premier League (NPL), including every team, their current owners, and a track record of their wins.</p>
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

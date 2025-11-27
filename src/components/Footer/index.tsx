@@ -1,12 +1,15 @@
+import { performRequest } from "@/services/baseQuery";
+import { getAllCategory } from "@/services/getAllCategory";
+import { getAllPages } from "@/services/getAllPages";
 import Link from "next/link";
 import "./footer.scss";
-import { getAllCategory } from "@/services/getAllCategory";
-import { performRequest } from "@/services/baseQuery";
 
 export default async function Footer() {
 	const QUERY: string = getAllCategory();
+	const PAGEQUERY: string = getAllPages();
 
 	let categories: { id: string; name: string; slug: string }[] = [];
+	let pages: { id: string; pageTitle: string; slug: string }[] = [];
 	try {
 		const result = (await performRequest({
 			query: QUERY,
@@ -14,6 +17,17 @@ export default async function Footer() {
 
 
 		categories = result?.allCategories || [];
+	}
+	catch (e) {
+		console.log("Error Server Didn't respond", e);
+	}
+	try {
+		const result = (await performRequest({
+			query: PAGEQUERY,
+		})) as { allPages: { id: string; pageTitle: string; slug: string }[] };
+
+
+		pages = result?.allPages || [];
 	}
 	catch (e) {
 		console.log("Error Server Didn't respond", e);
@@ -28,18 +42,14 @@ export default async function Footer() {
 						<div className="footer-link">
 							<h3>Quick Links</h3>
 							<ul>
-								<li>
-									<Link href={"/"}>Home</Link>
-								</li>
-								<li>
-									<Link href={"/"}>About</Link>
-								</li>
-								<li>
-									<Link href={"/"}>Contact</Link>
-								</li>
-								<li>
-									<Link href={"/"}>Career</Link>
-								</li>
+								{
+									pages.length && pages.map((page) => (
+										<li key={page.slug}>
+											<Link href={`/${page.slug}`}>{page.pageTitle}</Link>
+										</li>
+
+									))
+								}
 							</ul>
 						</div>
 					</div>
