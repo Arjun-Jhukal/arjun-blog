@@ -72,6 +72,10 @@ export default async function NplSchedulePage({ params }: { params: Promise<{ sc
     return (
         <section className="schedule__root my-8 lg:my-12">
             <div className="container">
+
+                <div className="section__title mb-4 lg:mb-6">
+                    <h2 >{scheduleData.scheduleTitle}</h2>
+                </div>
                 <ul className="flex rounded-md p-1 gap-1 bg-gray-300 max-w-fit">
                     <li>
                         <button type="button" className="py-2 px-8 rounded-md bg-black text-white">Match Scheule</button>
@@ -81,7 +85,7 @@ export default async function NplSchedulePage({ params }: { params: Promise<{ sc
                     </li>
                 </ul>
 
-                <h2 className="mt-6 text-xl font-semibold">{scheduleData.scheduleTitle}</h2>
+
                 <div className="mt-6 space-y-4">
                     {scheduleData.nplScheduleContent.map((match, idx) => (
                         <NplMatchCard
