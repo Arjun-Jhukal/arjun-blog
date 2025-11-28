@@ -9,10 +9,10 @@ export default function Header() {
   const pathname = usePathname();
 
   const MenuItems = [
-    {
-      label: "Home",
-      url: "/",
-    },
+    // {
+    //   label: "Home",
+    //   url: "/",
+    // },
     {
       label: "Nepal Premier League",
       url: "/npl",

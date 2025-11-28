@@ -30,7 +30,7 @@ export default function AddToCalendar({ teamA, teamB, dateTime }: AddToCalendarP
             href={googleCalendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-all"
+            className="inline-block text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-all text-center"
         >
             Add to Calendar
         </a>

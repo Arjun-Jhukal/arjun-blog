@@ -1,20 +1,24 @@
 export const formatDate = (dateString: string) => {
     const date = new Date(dateString);
 
-    const monthsShort = [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
+    const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Kathmandu",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+    });
 
-    const day = date.getDate();
-    const month = monthsShort[date.getMonth()];
-    const year = date.getFullYear();
+    const parts = formatter.formatToParts(date);
 
-    let hours = date.getHours();
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    const ampm = hours >= 12 ? "PM" : "AM";
+    const day = parts.find(p => p.type === "day")?.value;
+    const month = parts.find(p => p.type === "month")?.value;
+    const year = parts.find(p => p.type === "year")?.value;
+    const hour = parts.find(p => p.type === "hour")?.value;
+    const minute = parts.find(p => p.type === "minute")?.value;
+    const dayPeriod = parts.find(p => p.type === "dayPeriod")?.value;
 
-    hours = hours % 12 || 12; // convert to 12-hour format
-
-    return `${day} ${month} ${year}, ${hours}:${minutes} ${ampm}`;
+    return `${day} ${month} ${year}, ${hour}:${minute} ${dayPeriod}`;
 };
