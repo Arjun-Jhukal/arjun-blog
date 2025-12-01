@@ -39,7 +39,6 @@ export default function InstallPrompt() {
 
     const handleDismiss = () => {
         setShowPrompt(false);
-        // Store dismissal in localStorage to prevent showing again for a while
         localStorage.setItem('pwa-dismissed', Date.now().toString());
     };
 
@@ -48,7 +47,7 @@ export default function InstallPrompt() {
         const dismissed = localStorage.getItem('pwa-dismissed');
         if (dismissed) {
             const dismissedTime = parseInt(dismissed);
-            const sevenDays = 7 * 24 * 60 * 60 * 1000;
+            const sevenDays = 3 * 24 * 60 * 60 * 1000;
             if (Date.now() - dismissedTime < sevenDays) {
                 setShowPrompt(false);
             }

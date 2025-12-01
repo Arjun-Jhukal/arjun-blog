@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import PwaMenu from "@/components/molecules/PwaMenu";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
@@ -76,6 +77,7 @@ export default function RootLayout({
 				<InstallPrompt />
 				<Header />
 				<main className="main">{children}</main>
+				<PwaMenu />
 				<Footer />
 				<Script
 					async

@@ -78,3 +78,9 @@
 	/* transform: translateY(-50%); */
 }
 
+
+@media all and (display-mode: standalone) {
+	.pwa-bottom-menu {
+		display: flex !important;
+	}
+}
